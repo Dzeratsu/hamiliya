@@ -1,0 +1,45 @@
+<template>
+<div class="container">
+  <div><router-link to="/"><img src="~/static/logo.png"></router-link></div>
+  <div class="nav-menu">
+    <div><NuxtLink to="/media/mantras" active-class="border" exact-path><h2>Медиа</h2></NuxtLink></div>
+    <div><NuxtLink to="/practic" active-class="border"><h2>Практика</h2></NuxtLink></div>
+    <div><NuxtLink to="/services/book" active-class="border"><h2>Услуги</h2></NuxtLink></div>
+    <div><NuxtLink to="/codes" active-class="border"><h2>Коды</h2></NuxtLink></div>
+  </div>
+</div>
+</template>
+
+<script>
+export default {
+  name: "HeaderLayout"
+}
+</script>
+
+<style scoped>
+.container div{
+  text-align: center;
+}
+img {
+  margin: 0 auto;
+}
+.nav-menu{
+  padding-top: 50px;
+  display: flex;
+  justify-content: space-around;
+}
+h2{
+  color: white;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 43px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.border {
+  display: block;
+  border-bottom: 1px solid white;
+  padding-bottom: 2px;
+}
+</style>
