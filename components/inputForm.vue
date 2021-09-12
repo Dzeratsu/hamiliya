@@ -1,5 +1,5 @@
 <template>
-<div class="input">
+<div class="input-form">
   <div><input placeholder="Имя" type="text"></div>
   <div> <input placeholder="E-mail" type="email"></div>
   <div><input placeholder="Телефон" type="text"></div>
@@ -14,7 +14,7 @@ export default {
 </script>
 
 <style scoped>
-.input {
+.input-form {
   padding-top: 90px;
   display: flex;
   flex-direction: column;
@@ -22,6 +22,7 @@ export default {
   font-family: jost, Arial, sans-serif;
 }
 input{
+  border: none;
   width: 990px;
   height: 90px;
   margin-bottom: 20px;

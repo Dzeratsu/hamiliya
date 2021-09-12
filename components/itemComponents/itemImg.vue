@@ -1,13 +1,10 @@
 <template>
-<div class="container">
-  <second-menu2/>
-  <book-catalog/>
-</div>
+<div></div>
 </template>
 
 <script>
 export default {
-  name: "services"
+  name: "itemImg"
 }
 </script>
 

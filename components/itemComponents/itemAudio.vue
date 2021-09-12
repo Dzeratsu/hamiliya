@@ -1,16 +1,17 @@
 <template>
-<div class="container">
-  <second-menu2/>
-  <book-catalog/>
-</div>
+  <div class="audio">
+
+  </div>
 </template>
 
 <script>
 export default {
-  name: "services"
+  name: "itemAudio"
 }
 </script>
 
 <style scoped>
-
+.audio{
+  padding-top: 120px;
+}
 </style>
