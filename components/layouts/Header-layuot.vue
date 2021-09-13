@@ -1,6 +1,6 @@
 <template>
 <div class="container">
-  <div><router-link to="/"><img src="~/static/logo.png"></router-link></div>
+  <div><router-link to="/"><img src="/logo.png"></router-link></div>
   <div class="nav-menu">
     <div><NuxtLink to="/media/mantras" active-class="border" exact-path><h2>Медиа</h2></NuxtLink></div>
     <div><NuxtLink to="/practic" active-class="border"><h2>Практика</h2></NuxtLink></div>
