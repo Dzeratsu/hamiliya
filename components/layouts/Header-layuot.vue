@@ -34,7 +34,6 @@ h2{
   font-style: normal;
   font-weight: 400;
   line-height: 43px;
-  letter-spacing: 0em;
   text-align: left;
 }
 .border {
