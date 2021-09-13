@@ -1,7 +1,7 @@
 <template><div>
   <div class="b-popup">
     <div class="b-popup-content">
-     <div><router-link to="/"><img src="/logoPop.png"></router-link></div>
+     <div><router-link to="/"><img src="../../assets/logoPop.png"></router-link></div>
       <div class="description">Вы вошли в платный раздел. Чтобы получить полный доступ ко всем платным продуктам (кроме расчета вибраций) выберете подписку.</div>
       <div class="price">
         <div><p>1 месяц за 529 ₽</p></div>
