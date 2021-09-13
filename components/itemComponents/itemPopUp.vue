@@ -31,6 +31,7 @@ export default {
   top:0px;
 }
 .b-popup .b-popup-content{
+  margin-top: 500px;
   margin:0 auto;
   background-color: white;
   border-radius:5px;
@@ -38,7 +39,6 @@ export default {
   height: 1000px;
   width: 1200px;
   left: 120px;
-  border-radius: 0px;
   text-align: center;
 }
 
