@@ -1,13 +1,13 @@
 <template>
 <div class="catalog-item">
   <NuxtLink to="/media/mantrasItem">
-<img :src="require('assets/catalog-img/img1.png')">
+<img :src="require('assets/catalog-img/img1.png')">  </NuxtLink>
   <div class="breadCrumbs">
     <NuxtLink to="/">Медиа</NuxtLink>
     <NuxtLink to="/">Мантры</NuxtLink>
   </div>
   <div class="item-title">Мантра на внутренне очищение и восполнение энергии</div>
-  </NuxtLink>
+
 </div>
 </template>
 

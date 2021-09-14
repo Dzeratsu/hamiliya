@@ -41,6 +41,7 @@ img {
     line-height: 10px;
   }
   img {
+    margin: 0 auto;
     padding-top: 30px;
     width: 320px;
     height: 110px;

@@ -36,6 +36,12 @@ export default {
   padding-top: 12px;
 }
 @media screen and (max-width: 425px) {
+  .container-footer{
+    width: 100%;
+    min-height: 330px;
+    background-color: #525252;
+    text-align: center;
+  }
   .logo1 {
     padding-top: 14px;
   }

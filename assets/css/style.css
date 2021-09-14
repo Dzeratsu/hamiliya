@@ -72,11 +72,10 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
   margin: 0 auto;
   background: linear-gradient(180deg, #847BB2 0%, #FFE1F7 103.33%);
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 420px) {
   .container {
     margin:0 auto;
     max-width: 320px;
     width: 100%;
-    margin: 0 auto;
   }
 }

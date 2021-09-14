@@ -1,8 +1,12 @@
 <template>
   <div class="wrapper">
+
    <HeaderLayout/>
+    <div class="content">
   <Nuxt/>
+    </div>
     <FooterLayout/>
+
   </div>
 </template>
 
@@ -19,5 +23,7 @@ export default {
 </script>
 
 <style scoped>
-
+.content {
+  min-height: 812px;
+}
 </style>
