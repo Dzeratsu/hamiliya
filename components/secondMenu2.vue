@@ -80,5 +80,8 @@ export default {
   .second-menu a {
     font-size: 10px;
   }
+  .blur {
+    filter: blur(20px);
+  }
 }
 </style>

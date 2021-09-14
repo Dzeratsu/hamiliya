@@ -24,6 +24,6 @@ export default {
 
 <style scoped>
 .content {
-  min-height: 812px;
+  min-height: 606px;
 }
 </style>
