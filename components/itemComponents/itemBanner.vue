@@ -17,6 +17,7 @@ export default {
 
 <style scoped>
 .banner{
+  margin: 0 auto;
   margin-top: 90px;
   background: url("./assets/mantrItem.png")no-repeat;
   width: 100%;
@@ -30,16 +31,7 @@ export default {
   height: 504px;
   text-align: center;
 }
-.banner-fon span {
-  width: 493px;
-  font-family: Jost;
-  font-size: 30px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 43px;
-  letter-spacing: 0em;
-  color: white;
-}
+
 .banner-text{
   display: flex;
   flex-direction: column;
@@ -48,21 +40,7 @@ export default {
   height: 100%;
   text-align: center;
 }
-button{
-  height: 84px;
-  width: 323px;
-  background: #847BB2;
-  border-radius: 500px;
-  border: none;
-  font-family: Jost;
-  font-size: 30px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 43px;
-  letter-spacing: 0em;
-  text-align: center;
-  color: white;
-}
+
 .title {
   font-size: 40px;
   font-style: normal;
@@ -80,8 +58,41 @@ button{
   color: white;
   text-align: center;
 }
-.title div {
-  margin: 0 auto;
-  width: 454px;
+@media screen and (max-width: 425px) {
+  .banner{
+    margin-top: 30px;
+    max-width: 320px;
+    height: 137px;
+  }
+  .banner-fon{
+    height: 137px;
+  }
+
+  .banner-fon span {
+    width: 493px;
+    font-family: Jost;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 43px;
+    letter-spacing: 0em;
+    color: white;
+  }
+  .banner-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+  .title {
+    font-size: 15px;
+    line-height: 21px;
+  }
+  .description {
+    font-size: 7px;
+    line-height: 10px;
+  }
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
 <div>
   <second-menu/>
-  ыфвф
+  <item-pop-up/>
   </div>
 </template>
 

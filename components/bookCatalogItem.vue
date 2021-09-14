@@ -16,9 +16,8 @@ export default {
 </script>
 
 <style scoped>
-.img-book {
-display: block;
-width: 411px;
+img{
+  width: 411px;
   height: 590px;
 }
 .catalog-item{
@@ -52,5 +51,27 @@ width: 411px;
   margin-right: 10px;
   border-bottom: 1px solid white;
   padding-bottom: 2px;
+}
+@media screen and (max-width: 425px) {
+  img {
+    width: 112px;
+    height: 177px;
+  }
+  .catalog-item{
+    width: 112px;
+    height: 214px;
+    margin-bottom: 15px;
+  }
+  .catalog-item div {
+    margin: 5px 5px 5px 5px;
+  }
+  .breadCrumbs{
+    font-size: 5px;
+    line-height: 7px;
+  }
+  .item-title {
+    font-size: 7px;
+    line-height: 10px;
+  }
 }
 </style>

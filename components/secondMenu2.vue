@@ -64,4 +64,21 @@ export default {
   visibility: hidden;
   position: absolute;
 }
+@media screen and (max-width: 425px) {
+  .wrap {
+    max-width: 271px;
+    margin: 0 auto;
+  }
+  .second-menu{
+    margin-top: 30px;
+    height: 35px;
+  }
+  .second-menu span {
+    width: 1px;
+    height: 35px;
+  }
+  .second-menu a {
+    font-size: 10px;
+  }
+}
 </style>

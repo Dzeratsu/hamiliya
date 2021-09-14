@@ -17,6 +17,7 @@ export default {
 
 <style scoped>
 .banner{
+  margin: 0 auto;
   margin-top: 90px;
   background: url("./assets/banner.png")no-repeat;
   width: 100%;
@@ -77,6 +78,44 @@ button{
 .title div {
   margin: 0 auto;
   width: 454px;
+}
+@media screen and (max-width: 425px) {
+  .banner{
+    margin-top: 20px;
+    background: url("./assets/banner.png")no-repeat;
+    width: 100%;
+    height: 100%;
+    max-width: 320px;
+    height: 114px;
+    background-size:cover;
+  }
+  .banner-fon{
+    height: 114px;
+  }
+  .title {
+    padding-bottom: 9px;
+    font-size: 10px;
+    line-height: 14px;
+    letter-spacing: 0em;
+  }
+  .title div {
+    width: 159px;
+  }
+  button{
+    height: 25px;
+    width: 89px;
+    background: #847BB2;
+    border-radius: 500px;
+    border: none;
+    font-family: Jost;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 14px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: white;
+  }
 }
 
 

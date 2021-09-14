@@ -31,7 +31,6 @@ export default {
   top:0px;
 }
 .b-popup .b-popup-content{
-  margin-top: 500px;
   margin:0 auto;
   background-color: white;
   border-radius:5px;
@@ -94,5 +93,63 @@ p{
   height: 70px;
   border: 3px solid #847BB2;
   box-sizing: border-box;
+}
+@media screen and (max-width: 425px) {
+  .b-popup{
+    margin: 0 auto;
+    min-heightwidth:100%;
+    min-height:100%;
+    background: rgba(0, 0, 0, 0.35);
+    overflow: visible;
+    position: fixed;
+    top:0px;
+  }
+  .b-popup .b-popup-content{
+    margin:0 auto;
+    margin-top: 104px;
+    background-color: white;
+    border-radius:5px;
+    box-shadow: 0px 0px 10px #000;
+    height: 315px;
+    width: 255px;
+    left: 120px;
+    text-align: center;
+  }
+  img{
+    padding-top: 23px;
+    width: 79px;
+    height: 68px;
+  }
+  button{
+    width: 130px;
+    height: 30px;
+    font-size: 10px;
+    line-height: 14px;
+  }
+  .description {
+    padding-top: 20px;
+    margin: 0 auto;
+    width: 206px;
+    font-size: 10px;
+    line-height: 14px;
+  }
+  .price {
+    padding-top: 20px;
+    width: 102px;
+    margin: 0 auto;
+    display: block;
+    padding-bottom:20px;
+  }
+  .price div {
+    width: 102px;
+    height: 20px;
+    border: 1px solid #847BB2;
+    margin-bottom: 5px;
+  }
+  p{
+    padding-top: 1px;
+    font-size: 10px;
+    line-height: 14px;
+  }
 }
 </style>

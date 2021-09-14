@@ -41,4 +41,23 @@ h2{
   border-bottom: 1px solid white;
   padding-bottom: 2px;
 }
+
+@media screen and (max-width: 425px) {
+img {
+  height: 67px;
+  width: 79px;
+}
+  h2{
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 14px;
+    text-align: left;
+    color: white;
+  }
+  .nav-menu {
+    padding-top: 20px;
+  }
+}
+
 </style>

@@ -23,4 +23,11 @@ export default {
   justify-content: space-between;
   flex-wrap: wrap;
 }
+@media screen and (max-width: 425px) {
+  .catalog{
+    width: 249px;
+    margin: 0 auto;
+    padding-top: 30px;
+  }
+}
 </style>

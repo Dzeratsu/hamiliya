@@ -1,16 +1,14 @@
-<template><div>
+<template>
 <div class="container">
   <item-banner/>
   <div class="description">Задача организации, в особенности же постоянное информационно-пропагандистское обеспечение нашей деятельности требуют от нас анализа модели развития. Не следует, однако забывать, что начало повседневной работы по формированию позиции в значительной степени обуславливает создание форм развития. </div>
-  <item-audio/>
-
-</div>
+  <item-vid/>
 </div>
 </template>
 
 <script>
 export default {
-  name: "mantrasItem"
+  name: "pageVideo"
 }
 </script>
 

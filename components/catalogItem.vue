@@ -1,11 +1,13 @@
 <template>
 <div class="catalog-item">
+  <NuxtLink to="/media/mantrasItem">
 <img :src="require('assets/catalog-img/img1.png')">
   <div class="breadCrumbs">
     <NuxtLink to="/">Медиа</NuxtLink>
     <NuxtLink to="/">Мантры</NuxtLink>
   </div>
   <div class="item-title">Мантра на внутренне очищение и восполнение энергии</div>
+  </NuxtLink>
 </div>
 </template>
 
@@ -30,7 +32,6 @@ export default {
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
-  line-height: 29px;
   letter-spacing: 0em;
   text-align: left;
   color: #847BB2;
@@ -49,5 +50,27 @@ export default {
   margin-right: 10px;
   border-bottom: 1px solid #847BB2;
   padding-bottom: 2px;
+}
+@media screen and (max-width: 425px) {
+  .catalog-item{
+    width: 83px;
+    height: 92px;
+    margin-bottom: 11px;
+  }
+  img{
+    width: 83px;
+    height: 38px;
+  }
+  .breadCrumbs{
+    font-size: 5px;
+  }
+  .item-title {
+    font-size: 7px;
+    line-height: 10px;
+  }
+  .catalog-item div {
+    margin: 5px 5px 5px 5px;
+  }
+
 }
 </style>
