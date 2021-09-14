@@ -2,12 +2,12 @@
 <div class="container-footer">
 <div class="logo1"><img src="~/static/foot-logo1.png"></div>
 <NuxtLink to="/"><div class="logo2"><img src="~/static/foot-logo2.png"></div></NuxtLink>
-  <div class="icon-wrap">
+<!--  <div class="icon-wrap">
   <NuxtLink to="#"><img src="~/assets/instagram_bw.png" class="icon"> </NuxtLink>
   <NuxtLink to="#"><img src="~/assets/fb.png" class="icon"> </NuxtLink>
   <NuxtLink to="#"><img src="~/assets/Whatsup_bw.png" class="icon"> </NuxtLink>
   <NuxtLink to="#"><img src="~/assets/Telegram_bw.png" class="icon"> </NuxtLink>
-  </div>
+  </div>-->
 </div>
 </template>
 
