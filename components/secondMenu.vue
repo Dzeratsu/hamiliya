@@ -2,12 +2,12 @@
 <div class="container">
   <div class="wrap">
 <div class="second-menu">
-  <div><NuxtLink active-class="blur" to="/media/mantras" class="none">Мантры</NuxtLink>
-    <NuxtLink  to="/media/mantras">Мантры</NuxtLink>
+  <div><NuxtLink active-class="blur" to="/" class="none">Мантры</NuxtLink>
+    <NuxtLink  to="/">Мантры</NuxtLink>
   </div>
     <span></span>
-  <div><router-link active-class="blur" to="/media/mantrasVideo" class="none">Видео</router-link>
-    <router-link  to="/media/mantrasVideo">Видео</router-link>
+  <div><NuxtLink active-class="blur" to="/mantrasVideo" class="none">Видео</NuxtLink>
+    <NuxtLink  to="/mantrasVideo">Видео</NuxtLink>
   </div>
 </div>
   </div>

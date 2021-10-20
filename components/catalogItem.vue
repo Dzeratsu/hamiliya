@@ -1,26 +1,30 @@
 <template>
 <div class="catalog-item">
-  <NuxtLink to="/media/mantrasItem">
-<img :src="require('assets/catalog-img/img1.png')">  </NuxtLink>
-  <div class="breadCrumbs">
-    <NuxtLink to="/">Медиа</NuxtLink>
-    <NuxtLink to="/">Мантры</NuxtLink>
-  </div>
-  <div class="item-title">Мантра на внутренне очищение и восполнение энергии</div>
-
+<!--  <NuxtLink to="/media/mantrasItem">-->
+  <NuxtLink :to="{path: `/${materialPrevie[1]}/${materialPrevie[0].id}`}">
+    <img :src="imgUrl"/>
+  <div class="item-title">{{ materialPrevie[0].name}}</div>
+  </NuxtLink>
 </div>
 </template>
 
 <script>
 export default {
-  name: "catalogItem"
+  props:['materialPrevie'],
+  name: "catalogItem",
+  data() {
+    return {
+      imgUrl: 'http://apiblog.hamiliya.social/' + this.materialPrevie[0].cover_img
+    }
+  }
 }
 </script>
 
 <style scoped>
+
 .catalog-item{
   width: 390px;
-  height: 431px;
+  height: 351px;
   background-color: white;
   margin-bottom: 50px;
 }

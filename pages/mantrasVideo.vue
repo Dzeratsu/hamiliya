@@ -1,7 +1,7 @@
 <template>
 <div>
   <second-menu/>
-  <item-pop-up/>
+  <catalog v-bind:id="[12, 'video']"/>
   </div>
 </template>
 

@@ -2,7 +2,7 @@
 <div class="container">
   <div><router-link to="/"><img src="/logo.png"></router-link></div>
   <div class="nav-menu">
-    <div><NuxtLink to="/media/mantras" active-class="border" exact-path><h2>Медиа</h2></NuxtLink></div>
+    <div><NuxtLink to="/" active-class="border" exact-path><h2>Медиа</h2></NuxtLink></div>
     <div><NuxtLink to="/practic" active-class="border"><h2>Практика</h2></NuxtLink></div>
     <div><NuxtLink to="/services/book" active-class="border"><h2>Услуги</h2></NuxtLink></div>
     <div><NuxtLink to="/codes" active-class="border"><h2>Коды</h2></NuxtLink></div>

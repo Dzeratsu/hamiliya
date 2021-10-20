@@ -1,16 +1,44 @@
 <template>
   <div class="audio">
-<img src="~/assets/audio.png">
+    <audio id="player" :src="urlAud" controls></audio>
   </div>
 </template>
 
 <script>
 export default {
-  name: "itemAudio"
+  props:['aud'],
+  name: "itemAudio",
+  date() {
+    return {
+    urlAud: ''
+    }
+  },
+  created() {
+    this.urlAud = "http://apiblog.hamiliya.social/"+this.aud.url
+  }
 }
 </script>
 
 <style scoped>
+audio{
+  height: 85px;
+  margin: 0 auto;
+  max-width: 1270px;
+  width: 100%;
+}
+audio::-webkit-media-controls-panel{
+  border-radius: 0px;
+  background-color: #847BB2;
+}
+audio::-webkit-media-controls-mute-button{
+  /* display: none;*/
+}
+audio::-webkit-media-controls-play-button{
+  /*  display: none;*/
+}
+audio::-webkit-media-controls-timeline-container {
+
+}
 .audio{
   text-align: center;
   padding-top: 120px;

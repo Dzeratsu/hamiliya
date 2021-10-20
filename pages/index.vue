@@ -1,9 +1,16 @@
 <template>
-<div class="container"> Какая то главная страница</div>
+<div class="container">
+  <second-menu/>
+  <catalog v-bind:id="[11, 'media']"/>
+</div>
 </template>
 
 <script>
 export default {
-  layout : 'default'
+  name: "mantras"
 }
 </script>
+
+<style scoped>
+
+</style>

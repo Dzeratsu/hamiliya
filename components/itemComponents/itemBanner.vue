@@ -1,9 +1,9 @@
 <template>
-  <div class="banner">
+  <div class="banner" v-bind:style="{ backgroundImage: `url(${mantraName[1]})`}">
     <div class="banner-fon">
       <div class="banner-text">
         <div class="title">Мантра</div>
-        <div class="description">на внутренне очищение</div>
+        <div class="description">{{ mantraName[0]}}</div>
       </div>
     </div>
   </div>
@@ -11,6 +11,7 @@
 
 <script>
 export default {
+  props: ['mantraName'],
   name: "itemBanner"
 }
 </script>
