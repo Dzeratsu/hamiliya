@@ -43,7 +43,6 @@ button{
   line-height: 43px;
   letter-spacing: 0em;
   text-align: center;
-
 }
 .banner-fon{
   background: rgba(132, 123, 178, 0.46);
@@ -78,6 +77,24 @@ button{
   text-align: center;
 }
 @media screen and (max-width: 425px) {
+  button{
+    padding-top: -15px;
+    height: 24px;
+    width: 100px;
+    left: 559px;
+    top: 781px;
+    border-radius: 500px;
+    border: 0px;
+    background-color: #847BB2;
+    color: white;
+    font-family: Jost;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 0px;
+    letter-spacing: 0em;
+    text-align: center;
+  }
   .banner{
     margin-top: 30px;
     max-width: 320px;
