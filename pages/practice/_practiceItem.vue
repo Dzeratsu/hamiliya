@@ -84,14 +84,14 @@ img {
   padding-top: 120px;
 }
 @media screen and (max-width: 425px) {
-  .description{
-  text-align: justify;
-}
+  .description {
+    text-align: justify;
+  }
 
-img {
-  padding-top: 120px;
+  img {
+    padding-top: 120px;
+  }
 }
-
 @media screen and (max-width: 425px) {
   .description {
     height: 50px;
