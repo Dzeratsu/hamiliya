@@ -1,10 +1,10 @@
 <template>
   <div class="container">
-      <item-banner v-bind:mantraName="[mantraData.name, postrerURL, 'Практика']"/>
-    <div class="description" v-html="pageBlock[0].description" v-if="pageBlock"></div>
-<!--  <img src="~/assets/practic.png">-->
-  <item-description v-bind:text="pageBlock[1].description" v-if="pageBlock"/>
-   <div class="description"v-html="pageBlock[2].description" v-if="pageBlock"> </div>
+      <item-banner v-bind:mantraName="[mantraData.name, postrerURL]"/>
+    <div class="description">Задача организации, в особенности же постоянное информационно-пропагандистское обеспечение нашей деятельности требуют от нас анализа модели развития. Не следует, однако забывать, что начало повседневной работы по формированию позиции в значительной степени обуславливает создание форм развития. </div>
+  <img src="~/assets/practic.png">
+  <item-description/>
+   <div class="description">Задача организации, в особенности же постоянное информационно-пропагандистское обеспечение нашей деятельности требуют от нас анализа модели развития. Не следует, однако забывать, что начало повседневной работы по формированию позиции в значительной степени обуславливает создание форм развития. </div>
     <div class="video ">
      <video-player src="https://www.youtube.com/watch?v=uUm-6b2I4No&feature=youtu.be"/>
     </div>
@@ -23,14 +23,12 @@ export default {
       audios: [],
       postrerURL: '',
       mantraData: '',
-      urlVideo: '',
-      pageBlock: ''
+      urlVideo: ''
     }
   },
   mounted() {
     axios.get(`http://apiblog.hamiliya.social/get_materials/${this.$route.params.practiceItem}`)
       .then((response) => this.mantraData = response.data.materials).then(()=> {
-      this.pageBlock = JSON.parse(this.mantraData.page_blocks)
       this.urlVideo = JSON.parse(this.mantraData.url_video)
       for(let i = 0; i < this.mantraData.file.length; i++){
         if(this.mantraData.file[i].audio !== 0){
@@ -48,7 +46,6 @@ export default {
 .video{
   margin: 0 auto;
   text-align: center;
-  padding-top: 50px;
   padding-bottom: 50px;
   max-width: 1270px;
 }
