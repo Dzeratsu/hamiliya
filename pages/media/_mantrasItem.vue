@@ -1,7 +1,7 @@
 <template>
   <div>
 <div class="container">
-  <item-banner v-bind:mantraName="[mantraData.name, postrerURL]"/>
+  <item-banner v-bind:mantraName="[mantraData.name, postrerURL, 'Мантра']"/>
   <div class="description" v-html="mantraData.description"></div>
   <item-audio v-for="item in audios" v-bind:aud="item"/>
 </div>

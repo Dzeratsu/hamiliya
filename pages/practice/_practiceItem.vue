@@ -1,13 +1,14 @@
 <template>
-<div class="container">
-
-  <item-banner v-bind:mantraName="[mantraData.name, postrerURL, 'Видео']"/>
-  <div class="description" v-html="mantraData.description"></div>
-  <div class="video ">
-    <video-player :src="urlVideo[0]"/>
+  <div class="container">
+      <item-banner v-bind:mantraName="[mantraData.name, postrerURL, 'Практика']"/>
+    <div class="description" v-html="pageBlock[0].description" v-if="pageBlock"></div>
+<!--  <img src="~/assets/practic.png">-->
+  <item-description v-bind:text="pageBlock[1].description" v-if="pageBlock"/>
+   <div class="description"v-html="pageBlock[2].description" v-if="pageBlock"> </div>
+    <div class="video ">
+     <video-player src="https://www.youtube.com/watch?v=uUm-6b2I4No&feature=youtu.be"/>
+    </div>
   </div>
-
-</div>
 </template>
 
 <script>
@@ -15,22 +16,22 @@ import axios from "axios";
 import VideoPlayer from 'nuxt-video-player';
 require("nuxt-video-player/src/assets/css/main.css");
 export default {
-  name: "pageVideo",
+  name: "practiceItem",
   components: {VideoPlayer},
   data() {
     return{
       audios: [],
       postrerURL: '',
       mantraData: '',
-      urlVideo: ''
+      urlVideo: '',
+      pageBlock: ''
     }
   },
   mounted() {
-    axios.get(`http://apiblog.hamiliya.social/get_materials/${this.$route.params.pageVideo}`)
+    axios.get(`http://apiblog.hamiliya.social/get_materials/${this.$route.params.practiceItem}`)
       .then((response) => this.mantraData = response.data.materials).then(()=> {
-        this.urlVideo = JSON.parse(this.mantraData.url_video)
-      console.log(this.urlVideo)
-      console.log(typeof(this.urlVideo))
+      this.pageBlock = JSON.parse(this.mantraData.page_blocks)
+      this.urlVideo = JSON.parse(this.mantraData.url_video)
       for(let i = 0; i < this.mantraData.file.length; i++){
         if(this.mantraData.file[i].audio !== 0){
           this.audios.push(this.mantraData.file[i])
@@ -47,10 +48,10 @@ export default {
 .video{
   margin: 0 auto;
   text-align: center;
+  padding-top: 50px;
   padding-bottom: 50px;
   max-width: 1270px;
 }
-
 .description{
   height: 144px;
   width: 989px;
@@ -63,6 +64,9 @@ export default {
   color: white;
   text-align: justify ;
 }
+img {
+  padding-top: 120px;
+}
 @media screen and (max-width: 425px) {
   .description{
     height: 50px;
@@ -71,6 +75,12 @@ export default {
     padding-top: 30px;
     font-size: 7px;
     line-height: 10px;
+  }
+  img {
+    margin: 0 auto;
+    padding-top: 30px;
+    width: 320px;
+    height: 110px;
   }
 }
 </style>

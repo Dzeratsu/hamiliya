@@ -1,6 +1,5 @@
 <template>
 <div class="catalog-item">
-<!--  <NuxtLink to="/media/mantrasItem">-->
   <NuxtLink :to="{path: `/${materialPrevie[1]}/${materialPrevie[0].id}`}">
     <img :src="imgUrl"/>
   <div class="item-title">{{ materialPrevie[0].name}}</div>

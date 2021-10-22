@@ -2,19 +2,101 @@
 <div class="container">
   <div class="code-form">
     <div class="input-form">
-      <div><input placeholder="Имя Фамилия Отчество" type="text"></div>
-      <div><input placeholder="Телефон" type="text"></div>
-      <div><input placeholder="Желание" type="text"></div>
-      <div><button type="submit">Получить код</button></div>
+      <div><input placeholder="Имя Отчество Фамилия" type="text" v-model="iof" @keypress="test()"></div>
+      <div><button @click="code()">Получить код</button></div>
+    </div>
+    <div class="code-user">
+      <div class="code-item"><p>Ваш код: <span v-if="result">{{result}}</span></p></div>
     </div>
   </div>
-  <div> <user-code/></div>
 </div>
 </template>
 
 <script>
 export default {
-  name: "codes"
+  name: "codes",
+  data () {
+    return {
+      iof: '',
+      result: ''
+    }
+  },
+  methods:{
+    test(){
+      this.iof = this.iof.replace(/[^А-я ]/g, '')
+    },
+    code(){
+      this.test()
+     let alfavit = {
+        а: 1, б: 2, в: 3, г: 4, д: 5, е: 6, ё: 7, ж: 8, з: 9,
+          и: 1, й: 2, к: 3, л: 4, м: 5, н: 6, о: 7, п: 8, р: 9,
+          с: 1, т: 2, у: 3, ф: 4, х: 5, ц: 6, ч: 7, ш: 8, щ: 9,
+          ъ: 1, ы: 2, ь: 3, э: 4, ю: 5, я: 6
+      }
+      let number = []
+      var Summ = []
+      var firstSumm = []
+      let arr = this.iof.toLowerCase().split(' ').join('').split('')
+      for(let i = 0; i < arr.length; i++){
+        number.push(alfavit[arr[i]])
+      }
+      if(number.length % 2 == 0){
+        for(let j = 0; j < number.length; j=j+2){
+          Summ.push(number[j] + number[j+1])
+        }
+      }else{
+        for(let j = 0; j < number.length-1; j=j+2){
+          Summ.push(number[j] + number[j+1])
+        }
+        Summ.push(number[number.length-1])
+      }
+      testNumber()
+      function testNumber(){
+        firstSumm = Summ.join('').split('')
+        let numZero = firstSumm.map((x) => parseInt(x, 10))
+        if(firstSumm.length == 9 && numZero.indexOf(0) < 0){
+          return
+        }else if(firstSumm.length > 9){
+          if(firstSumm.length == 10 && numZero.indexOf(0) > 0){
+            numZero.splice(numZero.indexOf(0), 1)
+            Summ = numZero
+          }else{summNumber()}
+          //запусть складывание
+        }else if( firstSumm.length <= 8){
+          add369()
+          //запусть добавление цифр
+        }else if(firstSumm.length == 9 && numZero.indexOf(0) >= 0){
+          summNumber()
+        }
+      }
+      function summNumber(){
+        //сложить пары, с проверкой на четность
+        let newSumm = []
+        if(Summ.length % 2 == 0){
+          for(let i = 0; i < Summ.length-1; i=i+2){
+            newSumm.push(Summ[i] + Summ[i+1])
+          }
+          Summ = newSumm
+          testNumber()
+        }else{
+          for(let i = 0; i < Summ.length-2; i=i+2){
+            newSumm.push(Summ[i] + Summ[i+1])
+          }
+          newSumm.push(Summ[Summ.length-1])
+          Summ = newSumm
+          testNumber()
+        }
+      }
+      function add369(){
+        //добавить 369
+        Summ.push(3)
+        Summ.push(6)
+        Summ.push(9)
+        testNumber()
+      }
+      this.result = Summ.join('')
+    }
+  }
 }
 </script>
 
@@ -24,7 +106,7 @@ export default {
   margin: 0 auto;
   margin-top: 90px;
   max-width: 921px;
-  height: 799px;
+  height: 600px;
   background: #847BB2;
 }
 .input-form{
@@ -60,6 +142,40 @@ input::-webkit-input-placeholder { color: #B7B1D6; }
 input::-ms-input-placeholder { color: #B7B1D6; }
 input::-ms-input-placeholder { color: #B7B1D6; }
 input::placeholder { color: #B7B1D6;}
+.code-user{ padding-top: 78px;
+  padding-bottom: 90px}
+.code-item {
+  margin: 0 auto;
+  background: radial-gradient(96.73% 2322.6% at 1.22% 50%, #EBA4FD 0%, #B6A3FF 100%);
+  border-radius: 500px;
+  max-width: 490px;
+  max-height: 100px;
+}
+.code-item p{
+  text-align: center;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 58px;
+  color: white;
+}
+@media screen and (max-width: 425px) {
+  .code-item {
+    max-width: 187px;
+    max-height: 31px;
+  }
+  .code-item p{
+    padding-top: 0px;
+    text-align: center;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 31px;
+    color: white;
+  }
+  .code-user{ padding-top: 20px;
+    padding-bottom: 31px}
+}
 @media screen and (max-width: 425px) {
   .code-form{
     margin-top: 30px;
