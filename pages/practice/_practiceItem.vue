@@ -1,19 +1,11 @@
 <template>
   <div class="container">
-      <item-banner v-bind:mantraName="[mantraData.name, postrerURL, 'Практика']"/>
-    <div class="description" v-html="pageBlock[0].description" v-if="pageBlock"></div>
-<!--  <img src="~/assets/practic.png">-->
-  <item-description v-bind:text="pageBlock[1].description" v-if="pageBlock"/>
-   <div class="description"v-html="pageBlock[2].description" v-if="pageBlock"> </div>
-    <div class="video ">
-     <video-player src="https://www.youtube.com/watch?v=uUm-6b2I4No&feature=youtu.be"/>
-  <div className="container">
     <item-banner v-bind:mantraName="[mantraData.name, postrerURL, 'Практика']"/>
-    <div className="description" v-html="pageBlock[0].description" v-if="pageBlock"></div>
+    <div class="description" v-html="pageBlock[0].description" v-if="pageBlock"></div>
     <!--  <img src="~/assets/practic.png">-->
     <item-description v-bind:text="pageBlock[1].description" v-if="pageBlock"/>
-    <div className="description" v-html="pageBlock[2].description" v-if="pageBlock"></div>
-    <div className="video ">
+    <div class="description"v-html="pageBlock[2].description" v-if="pageBlock"> </div>
+    <div class="video ">
       <video-player src="https://www.youtube.com/watch?v=uUm-6b2I4No&feature=youtu.be"/>
     </div>
   </div>
@@ -28,7 +20,6 @@ export default {
   components: {VideoPlayer},
   data() {
     return{
-    return {
       audios: [],
       postrerURL: '',
       mantraData: '',
@@ -45,13 +36,6 @@ export default {
         if(this.mantraData.file[i].audio !== 0){
           this.audios.push(this.mantraData.file[i])
         }else if (this.mantraData.file[i].audio == 0 && this.mantraData.file[i].cover == 0 ){
-      .then((response) => this.mantraData = response.data.materials).then(() => {
-      this.pageBlock = JSON.parse(this.mantraData.page_blocks)
-      this.urlVideo = JSON.parse(this.mantraData.url_video)
-      for (let i = 0; i < this.mantraData.file.length; i++) {
-        if (this.mantraData.file[i].audio !== 0) {
-          this.audios.push(this.mantraData.file[i])
-        } else if (this.mantraData.file[i].audio == 0 && this.mantraData.file[i].cover == 0) {
           this.postrerURL = "http://apiblog.hamiliya.social/" + this.mantraData.file[i].url
         }
       }
@@ -61,14 +45,14 @@ export default {
 </script>
 
 <style scoped>
-.video {
+.video{
   margin: 0 auto;
   text-align: center;
   padding-top: 50px;
   padding-bottom: 50px;
   max-width: 1270px;
 }
-.description {
+.description{
   height: 144px;
   width: 989px;
   margin: 0 auto;
@@ -84,16 +68,7 @@ img {
   padding-top: 120px;
 }
 @media screen and (max-width: 425px) {
-  .description {
-    text-align: justify;
-  }
-
-  img {
-    padding-top: 120px;
-  }
-}
-@media screen and (max-width: 425px) {
-  .description {
+  .description{
     height: 50px;
     width: 241px;
     margin: 0 auto;
