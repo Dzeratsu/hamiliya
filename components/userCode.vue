@@ -1,7 +1,5 @@
 <template>
-<div class="code-user">
-    <div class="code-item"><p>Ваш код: 859403948</p></div>
-</div>
+
 </template>
 
 <script>

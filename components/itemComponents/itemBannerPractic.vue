@@ -1,9 +1,9 @@
 <template>
-  <div class="banner" v-bind:style="{ backgroundImage: `url(${mantraName[1]})`}">
+  <div class="banner">
     <div class="banner-fon">
       <div class="banner-text">
-        <div class="title">{{ mantraName[2] }}</div>
-        <div class="description">{{ mantraName[0]}}</div>
+        <div class="description">Вы можете ознакомится с нашими <br> фирменными курсами</div>
+        <div class="description"><div style="padding-top: 15px"><button>Подробнее</button></div></div>
       </div>
     </div>
   </div>
@@ -26,6 +26,24 @@ export default {
   max-width: 1440px;
   height: 504px;
   background-size:cover;
+}
+button{
+  height: 74px;
+  width: 280px;
+  left: 559px;
+  top: 781px;
+  border-radius: 500px;
+  border: 0px;
+  background-color: #847BB2;
+  color: white;
+  font-family: Jost;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 43px;
+  letter-spacing: 0em;
+  text-align: center;
+
 }
 .banner-fon{
   background: rgba(132, 123, 178, 0.46);

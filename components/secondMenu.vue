@@ -6,8 +6,8 @@
     <NuxtLink  to="/">Мантры</NuxtLink>
   </div>
     <span></span>
-  <div><NuxtLink active-class="blur" to="/mantrasVideo" class="none">Видео</NuxtLink>
-    <NuxtLink  to="/mantrasVideo">Видео</NuxtLink>
+  <div><NuxtLink active-class="blur" to="/mantrasVideo/" class="none">Видео</NuxtLink>
+    <NuxtLink  to="/mantrasVideo/">Видео</NuxtLink>
   </div>
 </div>
   </div>
