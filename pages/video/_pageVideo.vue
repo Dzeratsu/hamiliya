@@ -1,26 +1,36 @@
 <template>
 <div class="container">
-<!--  <item-banner v-bind:mantraName="[mantraData.name, postrerURL]"/>-->
-  <div class="description">Задача организации, в особенности же постоянное информационно-пропагандистское обеспечение нашей деятельности требуют от нас анализа модели развития. Не следует, однако забывать, что начало повседневной работы по формированию позиции в значительной степени обуславливает создание форм развития. </div>
-  <item-vid/>
+
+  <item-banner v-bind:mantraName="[mantraData.name, postrerURL]"/>
+  <div class="description" v-html="mantraData.description"></div>
+  <div class="video ">
+    <video-player :src="urlVideo[0]"/>
+  </div>
+
 </div>
 </template>
 
 <script>
 import axios from "axios";
-
+import VideoPlayer from 'nuxt-video-player';
+require("nuxt-video-player/src/assets/css/main.css");
 export default {
   name: "pageVideo",
+  components: {VideoPlayer},
   data() {
     return{
       audios: [],
       postrerURL: '',
-      mantraData: ''
+      mantraData: '',
+      urlVideo: ''
     }
   },
   mounted() {
-    axios.get(`http://apiblog.hamiliya.social/get_materials/${this.$route.params.mantrasVideo}`)
+    axios.get(`http://apiblog.hamiliya.social/get_materials/${this.$route.params.pageVideo}`)
       .then((response) => this.mantraData = response.data.materials).then(()=> {
+        this.urlVideo = JSON.parse(this.mantraData.url_video)
+      console.log(this.urlVideo)
+      console.log(typeof(this.urlVideo))
       for(let i = 0; i < this.mantraData.file.length; i++){
         if(this.mantraData.file[i].audio !== 0){
           this.audios.push(this.mantraData.file[i])
@@ -34,6 +44,13 @@ export default {
 </script>
 
 <style scoped>
+.video{
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 50px;
+  max-width: 1270px;
+}
+
 .description{
   height: 144px;
   width: 989px;

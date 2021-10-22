@@ -2,7 +2,7 @@
   <div class="banner" v-bind:style="{ backgroundImage: `url(${mantraName[1]})`}">
     <div class="banner-fon">
       <div class="banner-text">
-        <div class="title">Мантра</div>
+<!--        <div class="title">Мантра</div>-->
         <div class="description">{{ mantraName[0]}}</div>
       </div>
     </div>

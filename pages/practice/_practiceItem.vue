@@ -1,21 +1,54 @@
 <template>
   <div class="container">
-      <item-banner/>
+      <item-banner v-bind:mantraName="[mantraData.name, postrerURL]"/>
     <div class="description">Задача организации, в особенности же постоянное информационно-пропагандистское обеспечение нашей деятельности требуют от нас анализа модели развития. Не следует, однако забывать, что начало повседневной работы по формированию позиции в значительной степени обуславливает создание форм развития. </div>
   <img src="~/assets/practic.png">
   <item-description/>
    <div class="description">Задача организации, в особенности же постоянное информационно-пропагандистское обеспечение нашей деятельности требуют от нас анализа модели развития. Не следует, однако забывать, что начало повседневной работы по формированию позиции в значительной степени обуславливает создание форм развития. </div>
-    <item-vid/>
+    <div class="video ">
+     <video-player src="https://www.youtube.com/watch?v=uUm-6b2I4No&feature=youtu.be"/>
+    </div>
   </div>
 </template>
 
 <script>
+import axios from "axios";
+import VideoPlayer from 'nuxt-video-player';
+require("nuxt-video-player/src/assets/css/main.css");
 export default {
-  name: "practic"
+  name: "practiceItem",
+  components: {VideoPlayer},
+  data() {
+    return{
+      audios: [],
+      postrerURL: '',
+      mantraData: '',
+      urlVideo: ''
+    }
+  },
+  mounted() {
+    axios.get(`http://apiblog.hamiliya.social/get_materials/${this.$route.params.practiceItem}`)
+      .then((response) => this.mantraData = response.data.materials).then(()=> {
+      this.urlVideo = JSON.parse(this.mantraData.url_video)
+      for(let i = 0; i < this.mantraData.file.length; i++){
+        if(this.mantraData.file[i].audio !== 0){
+          this.audios.push(this.mantraData.file[i])
+        }else if (this.mantraData.file[i].audio == 0 && this.mantraData.file[i].cover == 0 ){
+          this.postrerURL = "http://apiblog.hamiliya.social/" + this.mantraData.file[i].url
+        }
+      }
+    })
+  }
 }
 </script>
 
 <style scoped>
+.video{
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 50px;
+  max-width: 1270px;
+}
 .description{
   height: 144px;
   width: 989px;
