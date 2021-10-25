@@ -1,15 +1,21 @@
 <template>
-<div class="container center">
-  <h1 v-if="message">{{message}}</h1>
-  {{ford3dData}}
+<div class="container center"><br>
+  <h1>Оплатить подписку на 1 месяц</h1><br>
+  <h1 v-if="message">{{message}}</h1><br>
+  <div class="pay"><div class="pay-padding">
+    <img src="assets/card.jpg">
   <form id="paymentFormSample" onsubmit="return false;">
-    <input type="text" data-cp="cardNumber" value="4242 4242 4242 4242">
-    <input type="text" data-cp="expDateMonth" value="05">
-    <input type="text" data-cp="expDateYear" value="22">
-    <input type="text" data-cp="cvv" value="633">
-    <input type="text" data-cp="name" value="KONSTANTIN TESTOV" v-model="userName">
+    <div><span>Номер карты:</span><br> <input type="text" data-cp="cardNumber"  maxlength="16" placeholder="Номер карты" class="card" onkeyup="this.value = this.value.replace (/\D/gi, '').replace (/^0+/, '')"></div>
+    <br>
+    <div><span>ММ</span>
+    <input type="text" data-cp="expDateMonth"  maxlength="2" class="date" onkeyup="this.value = this.value.replace (/\D/gi, '').replace (/^0+/, '')" ><span> / ГГ</span>
+    <input type="text" data-cp="expDateYear"   maxlength="2" class="date" onkeyup="this.value = this.value.replace (/\D/gi, '').replace (/^0+/, '')">
+    <input type="text" data-cp="cvv"  class="cvv" maxlength="3" placeholder="CVV" onkeyup="this.value = this.value.replace (/\D/gi, '').replace (/^0+/, '')"><br></div><span>Имя владельца: <br></span>
+    <input type="text" data-cp="name" placeholder="Имя владельца" v-model="userName" class="name" onkeyup="this.value = this.value.replace (/\d/gi, '').replace (/^0+/, '')"><br>
     <button id="clickmy" type="submit" @click="submit">Оплатить 100 р.</button>
   </form>
+  </div>
+  </div>
   <form name="downloadForm" action="https://demo.cloudpayments.ru/acs" method="POST"  v-show="form3d" ref="sumb">
     <input type="hidden" name="PaReq" :value="ford3dData.PaReq">
     <input type="hidden" name="MD" :value="ford3dData.MD">
@@ -86,10 +92,96 @@ export default {
 </script>
 
 <style scoped>
+.card{
+  padding-top: 4px;
+}
+.cvv {
+  margin-left: 90px;
+  width: 40px;
+}
+.pay-padding{
+  padding: 5px;
+  padding-left: 25px;
+}
+.date{
+  width: 40px;
+}
+.pay{
+  margin: 0 auto;
+  text-align: left;
+  border-radius: 15px;
+  background-color:#dbdbdb;
+  max-width: 450px;
+  max-height: 300px;
+  box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.2);
+}
+span{
+  color: gray;
+  padding-bottom: 4px;
+}
 h1{
   font-size: 25px;
 }
 .center {
   text-align: center;
 }
+input{
+  border-radius: 3px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  border: none;
+  max-width: 450px;
+  height: 40px;
+  margin-bottom: 15px;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 43px;
+}
+button{
+  margin-left:70px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  width: 250px;
+  height: 40px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23px;
+  color: #000719;
+  border: none;
+}
+input::-webkit-input-placeholder { color: #B5B5B5; padding-left: 42px}
+input::-ms-input-placeholder { color: #B5B5B5; padding-left: 42px}
+input::-ms-input-placeholder { color: #B5B5B5; padding-left: 42px}
+input::placeholder { color: #B5B5B5; padding-left: 42px}
+@media screen and (max-width: 425px) {
+  .input-form {
+    padding-top: 20px;
+  }
+  input{
+    width: 270px;
+    height: 30px;
+    margin-bottom: 5px;
+    font-size: 10px;
+    line-height: 14px;
+  }
+  input::-webkit-input-placeholder { color: #B5B5B5; padding-left: 10px}
+  input::-ms-input-placeholder { color: #B5B5B5; padding-left: 10px}
+  input::-ms-input-placeholder { color: #B5B5B5; padding-left: 10px}
+  input::placeholder { color: #B5B5B5; padding-left: 10px}
+  button{
+    width: 250px;
+    height: 40px;
+    background: #FFFFFF;
+    border-radius: 30px;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 23px;
+    color: black;
+    border: none;
+  }
+}
+
 </style>
