@@ -8,6 +8,7 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'hamiliya',
+    script: [{src: "https://checkout.cloudpayments.ru/checkout.js"}],
     htmlAttrs: {
       lang: 'en'
     },
