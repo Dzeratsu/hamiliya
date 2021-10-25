@@ -88,9 +88,9 @@ button{
     background-color: #847BB2;
     color: white;
     font-family: Jost;
-    font-size: 15px;
+    font-size: 12px;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 400;
     line-height: 0px;
     letter-spacing: 0em;
     text-align: center;
