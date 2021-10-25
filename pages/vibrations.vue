@@ -70,7 +70,7 @@ export default {
 }
 .img-price{
   margin-top: 90px;
-  background: url("./assets/price.png")no-repeat;
+  background: url("../assets/price.png")no-repeat;
   width: 100%;
   height: 100%;
   max-width: 1270px;
@@ -128,7 +128,7 @@ display: none;
   }
   .img-price{
     margin-top: 20px;
-    background: url("./assets/price.png")no-repeat;
+    background: url("../assets/price.png")no-repeat;
     width: 100%;
     height: 100%;
     max-width: 270px;

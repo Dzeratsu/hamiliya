@@ -19,7 +19,7 @@ export default {
     }
   },
   mounted() {
-      axios.get(`http://apiblog.hamiliya.social/category/${this.id[0]}/page/0`)
+      axios.get(`https://api.hamiliya.space/category/${this.id[0]}/page/0`)
         .then((res) =>{
           this.materialData = res.data.categories_materials.result
         })

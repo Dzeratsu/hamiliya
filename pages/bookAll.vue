@@ -1,7 +1,7 @@
 <template>
 <div class="container">
   <second-menu2/>
-  <book-catalog/>
+  <book-catalog v-bind:id="[15, 'book']"/>
 </div>
 </template>
 

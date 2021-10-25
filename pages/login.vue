@@ -1,9 +1,13 @@
 <template>
   <div class="container" >
     <div class="input">
-    <input placeholder="введите логин"><br>
-      <input placeholder="введите пароль"><br><br>
-      <button> Вход </button>
+      <form action="" method="post" @submit.prevent="login" >
+        <div class="enter">Вход в аккаунт</div>
+        <br>
+    <input placeholder="введите логин" v-model="email"><br>
+      <input placeholder="введите пароль" v-model="password" type="password"><br><br>
+        <button type="submit">Войти в аккаунт</button>
+      </form>
     </div>
 
   </div>
@@ -11,7 +15,36 @@
 
 <script>
 export default {
-  name: "login"
+  name: "login",
+  data() {
+    return {
+      email: '',
+      password: '',
+      errors: ''
+    }
+  },
+  methods: {
+    async login(){
+      try {
+        await this.$auth.loginWith('local', {
+          data: {
+            email: this.email,
+            password: this.password
+          }
+        }).then((res) => {
+          if(res.data.errors) {
+            this.error = res.data.errors
+          }else{
+            localStorage.setItem('token', res.data.token)
+            /*this.$auth.setUserToken('local', 'Bearer ' + res.data.token)*/
+            this.$router.push('/')
+          }
+        })
+      }catch(error){
+        alert('abc')
+      }
+    }
+  }
 }
 </script>
 

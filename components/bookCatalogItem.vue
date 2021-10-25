@@ -1,17 +1,21 @@
 <template>
   <div class="catalog-item">
-    <img :src="require('assets/catalog-img/book.png')">
-    <div class="breadCrumbs">
-      <NuxtLink to="/">Услуги</NuxtLink>
-      <NuxtLink to="/">Книги</NuxtLink>
-    </div>
-    <div class="item-title">Книга "Питание"</div>
+    <NuxtLink :to="{path: `/${materialPrevie[1]}/${materialPrevie[0].id}`}">
+    <img :src="imgUrl"/>
+    <div class="item-title">{{ materialPrevie[0].name}}</div>
+    </NuxtLink>
   </div>
 </template>
 
 <script>
 export default {
-  name: "bookCatalogItem"
+  name: "bookCatalogItem",
+  props: ['materialPrevie'],
+  data() {
+    return {
+      imgUrl: 'https://api.hamiliya.space/' + this.materialPrevie[0].cover_img
+    }
+  }
 }
 </script>
 

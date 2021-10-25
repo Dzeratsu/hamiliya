@@ -1,16 +1,29 @@
 <template>
 
 <div class="catalog">
-  <book-catalog-item/>
-  <book-catalog-item/>
-  <book-catalog-item/>
-  <book-catalog-item/>
+    <book-catalog-item v-bind:materialPrevie="[item, id[1]]" v-for="item in materialData.materials"/>
 </div>
 </template>
 
 <script>
+import axios from "axios";
+import BookCatalogItem from "./bookCatalogItem";
+
 export default {
-  name: "bookCatalog"
+  components: {BookCatalogItem},
+  props: ['id'],
+  name: "bookCatalog",
+  data() {
+    return {
+      materialData: ''
+    }
+  },
+      mounted() {
+      axios.get(`https://api.hamiliya.space/category/${this.id[0]}/page/0`)
+        .then((res) => {
+          this.materialData = res.data.categories_materials.result
+        })
+  }
 }
 </script>
 

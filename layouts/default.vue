@@ -1,6 +1,5 @@
 <template>
   <div class="wrapper">
-
    <HeaderLayout/>
     <div class="content">
   <Nuxt/>
@@ -13,9 +12,11 @@
 <script>
 import HeaderLayout from '~/components/layouts/Header-layuot'
 import FooterLayout from "~/components/layouts/FooterLayout";
+import Auth from "../components/layouts/auth";
 export default {
   name: "default",
   components:{
+    Auth,
     HeaderLayout,
     FooterLayout
   }

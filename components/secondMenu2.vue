@@ -2,12 +2,12 @@
 <div class="container">
   <div class="wrap">
 <div class="second-menu">
-  <div><NuxtLink active-class="blur" to="/services/book" class="none">Книги</NuxtLink>
-    <NuxtLink  to="/services/book">Книги</NuxtLink>
+  <div><NuxtLink active-class="blur" to="/bookAll" class="none">Книги</NuxtLink>
+    <NuxtLink  to="/bookAll">Книги</NuxtLink>
   </div>
     <span></span>
-  <div><router-link active-class="blur" to="/services/vibrations" class="none">Расчет вибраций</router-link>
-    <router-link  to="/services/vibrations">Расчет вибраций</router-link>
+  <div><router-link active-class="blur" to="/vibrations" class="none">Расчет вибраций</router-link>
+    <router-link  to="/vibrations">Расчет вибраций</router-link>
   </div>
 </div>
   </div>

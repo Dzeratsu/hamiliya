@@ -1,6 +1,6 @@
 <template>
   <div class="audio">
-    <audio id="player" :src="urlAud" controls></audio>
+    <audio id="player" :src="urlAud" controls controlsList="nodownload noplaybackrate" ></audio>
   </div>
 </template>
 
@@ -14,7 +14,7 @@ export default {
     }
   },
   created() {
-    this.urlAud = "http://apiblog.hamiliya.social/"+this.aud.url
+    this.urlAud = "https://api.hamiliya.space/"+this.aud.url
   }
 }
 </script>
@@ -30,15 +30,8 @@ audio::-webkit-media-controls-panel{
   border-radius: 0px;
   background-color: #847BB2;
 }
-audio::-webkit-media-controls-mute-button{
-  /* display: none;*/
-}
-audio::-webkit-media-controls-play-button{
-  /*  display: none;*/
-}
-audio::-webkit-media-controls-timeline-container {
 
-}
+
 .audio{
   text-align: center;
   padding-top: 120px;

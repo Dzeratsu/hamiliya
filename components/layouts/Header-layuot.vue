@@ -1,18 +1,21 @@
 <template>
 <div class="container">
+  <auth/>
   <div><router-link to="/"><img src="/logo.png"></router-link></div>
   <div class="nav-menu">
     <div><NuxtLink to="/" active-class="border" exact-path><h2>Медиа</h2></NuxtLink></div>
     <div><NuxtLink to="/practiceAll" active-class="border"><h2>Практика</h2></NuxtLink></div>
-    <div><NuxtLink to="/services/book" active-class="border"><h2>Услуги</h2></NuxtLink></div>
+    <div><NuxtLink to="/bookAll" active-class="border"><h2>Услуги</h2></NuxtLink></div>
     <div><NuxtLink to="/codes" active-class="border"><h2>Коды</h2></NuxtLink></div>
   </div>
 </div>
 </template>
 
 <script>
+import Auth from "./auth";
 export default {
-  name: "HeaderLayout"
+  name: "HeaderLayout",
+  components: {Auth}
 }
 </script>
 

@@ -1,3 +1,5 @@
+// Внимание!!! если ты читаешь это сообщение, значит за работу мне не заплатили, подумай, стоит ли тебе тратить свое время на это //
+// но если все же решил доделать, проси четкое тз у заказчика фантазия расширяется каждый день//
 export default {
   server: {
     port: 8000, // default: 3000
@@ -37,9 +39,32 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/auth-next',
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  }
+  },
+  auth: {
+    localStorage: false,
+    strategies: {
+      local: {
+        token: {
+          property: 'token',
+          global: true,
+          type: 'Bearer'
+        },
+        user:{
+          property: 'user'
+        },
+        endpoints: {
+          login: { url: 'https://api.hamiliya.space/authorization', method: 'post'},
+          logout: true,
+          user: false,
+        },
+        autoLogout: true
+      }
+    }
+  },
 }

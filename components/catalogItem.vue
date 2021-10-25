@@ -13,7 +13,7 @@ export default {
   name: "catalogItem",
   data() {
     return {
-      imgUrl: 'http://apiblog.hamiliya.social/' + this.materialPrevie[0].cover_img
+      imgUrl: 'https://api.hamiliya.space/' + this.materialPrevie[0].cover_img
     }
   }
 }
