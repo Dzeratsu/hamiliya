@@ -1,7 +1,7 @@
 <template>
 <div class="container center"><br>
   <h1>Оплатить подписку на 1 месяц</h1><br>
-  <h1 v-if="message">{{message}}</h1><br>
+  <h1 v-if="message" class="error">{{message}}</h1><br>
   <div class="pay"><div class="pay-padding">
     <img src="assets/card.jpg">
   <form id="paymentFormSample" onsubmit="return false;">
@@ -9,7 +9,7 @@
     <br>
     <div><span>ММ</span>
     <input type="text" data-cp="expDateMonth"  maxlength="2" class="date" onkeyup="this.value = this.value.replace (/\D/gi, '').replace (/^0+/, '')" ><span> / ГГ</span>
-    <input type="text" data-cp="expDateYear"   maxlength="2" class="date" onkeyup="this.value = this.value.replace (/\D/gi, '').replace (/^0+/, '')">
+    <input type="text" data-cp="expDateYear"   maxlength="2" class="date" onkeyup="this.value = this.value.replace (/\D/gi, '').replace (/^0+/, '')"><span class="cv">CVV</span>
     <input type="text" data-cp="cvv"  class="cvv" maxlength="3" placeholder="CVV" onkeyup="this.value = this.value.replace (/\D/gi, '').replace (/^0+/, '')"><br></div><span>Имя владельца: <br></span>
     <input type="text" data-cp="name" placeholder="Имя владельца" v-model="userName" class="name" onkeyup="this.value = this.value.replace (/\d/gi, '').replace (/^0+/, '')"><br>
     <button id="clickmy" type="submit" @click="submit">Оплатить 100 р.</button>
@@ -92,6 +92,9 @@ export default {
 </script>
 
 <style scoped>
+.error{
+  color: red;
+}
 .card{
   padding-top: 4px;
 }
@@ -110,7 +113,7 @@ export default {
   margin: 0 auto;
   text-align: left;
   border-radius: 15px;
-  background-color:#dbdbdb;
+  background-color:#21BA72;
   max-width: 450px;
   max-height: 300px;
   box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.2);
@@ -118,6 +121,12 @@ export default {
 span{
   color: gray;
   padding-bottom: 4px;
+}
+.cv{
+  position: absolute;
+  padding-left: 56px;
+  padding-top: 15px;
+  text-align: right;
 }
 h1{
   font-size: 25px;
@@ -148,7 +157,7 @@ button{
   font-style: normal;
   font-weight: 400;
   line-height: 23px;
-  color: #000719;
+  color: #210759;
   border: none;
 }
 input::-webkit-input-placeholder { color: #B5B5B5; padding-left: 42px}
