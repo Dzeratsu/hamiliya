@@ -6,7 +6,7 @@
   <div class="video ">
     <video-player :src="urlVideo[0]"/>
   </div>
-  <div class="input-form">
+  <div class="input-form" v-if="mantraData.questions == []">
     <div><input placeholder="Введите ваше имя" v-model="userName"></div>
     <div><input v-for="(quest, index) in mantraData.questions" :placeholder="quest.name" v-model="questData[index]" value=" "></div>
     <div><button @click="testForm">Отправить</button></div>

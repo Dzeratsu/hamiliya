@@ -4,7 +4,7 @@
   <item-banner v-bind:mantraName="[mantraData.name, postrerURL, 'Мантра']"/>
   <div class="description" v-html="mantraData.description"></div>
   <item-audio v-for="item in audios" v-bind:aud="item"/>
-  <div class="input-form">
+  <div class="input-form" v-if="mantraData.questions == []">
     <div><input placeholder="Введите ваше имя" v-model="userName"></div>
     <div><input v-for="(quest, index) in mantraData.questions" :placeholder="quest.name" v-model="questData[index]" value=" "></div>
     <div><button @click="testForm">Отправить</button></div>
