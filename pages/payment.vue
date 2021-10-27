@@ -8,7 +8,7 @@
     <div><span>Номер карты:</span><br> <input type="text" data-cp="cardNumber"  maxlength="16" placeholder="Номер карты" class="card" onkeyup="this.value = this.value.replace (/\D/gi, '').replace (/^0+/, '')"></div>
     <br>
     <div><span>ММ</span>
-    <input type="text" data-cp="expDateMonth"  maxlength="2" class="date" onkeyup="this.value = this.value.replace (/\D/gi, '').replace (/^0+/, '')" ><span> / ГГ</span>
+    <input type="text" data-cp="expDateMonth"  maxlength="2" class="date" onkeyup="this.value = this.value.replace (/\D/gi, '').replace (/^0+/, '')" ><span>  / ГГ</span>
     <input type="text" data-cp="expDateYear"   maxlength="2" class="date" onkeyup="this.value = this.value.replace (/\D/gi, '').replace (/^0+/, '')"><span class="cv">CVV</span>
     <input type="text" data-cp="cvv"  class="cvv" maxlength="3" placeholder="CVV" onkeyup="this.value = this.value.replace (/\D/gi, '').replace (/^0+/, '')"><br></div><span>Имя владельца: <br></span>
     <input type="text" data-cp="name" placeholder="Имя владельца" v-model="userName" class="name" onkeyup="this.value = this.value.replace (/\d/gi, '').replace (/^0+/, '')"><br>
@@ -99,7 +99,7 @@ export default {
   padding-top: 4px;
 }
 .cvv {
-  margin-left: 90px;
+  margin-left: 40px;
   width: 40px;
 }
 .pay-padding{
@@ -110,19 +110,19 @@ export default {
   width: 40px;
 }
 .pay{
+  border: 1px solid black;
   margin: 0 auto;
   text-align: left;
   border-radius: 15px;
-  background-color:#21BA72;
-  max-width: 450px;
-  max-height: 300px;
-  box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  max-height: 350px;
 }
 span{
   color: gray;
   padding-bottom: 4px;
 }
 .cv{
+  display: none;
   position: absolute;
   padding-left: 56px;
   padding-top: 15px;
@@ -141,50 +141,58 @@ input{
   max-width: 450px;
   height: 40px;
   margin-bottom: 15px;
-  font-size: 25px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: 43px;
 }
 button{
-  margin-left:70px;
+  margin-bottom: 20px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   width: 250px;
   height: 40px;
   background: #FFFFFF;
   border-radius: 10px;
-  font-size: 30px;
+  font-size: 25px;
   font-style: normal;
   font-weight: 400;
   line-height: 23px;
-  color: #210759;
+  color: black;
   border: none;
 }
-input::-webkit-input-placeholder { color: #B5B5B5; padding-left: 42px}
-input::-ms-input-placeholder { color: #B5B5B5; padding-left: 42px}
-input::-ms-input-placeholder { color: #B5B5B5; padding-left: 42px}
-input::placeholder { color: #B5B5B5; padding-left: 42px}
+input::-webkit-input-placeholder { color: #B5B5B5; padding-left: 10px}
+input::-ms-input-placeholder { color: #B5B5B5; padding-left: 10px}
+input::-ms-input-placeholder { color: #B5B5B5; padding-left: 10px}
+input::placeholder { color: #B5B5B5; padding-left: 10px}
+.cvv::placeholder { color: #B5B5B5; padding-left: 0px!important;}
+
 @media screen and (max-width: 425px) {
   .input-form {
     padding-top: 20px;
   }
   input{
-    width: 270px;
-    height: 30px;
-    margin-bottom: 5px;
-    font-size: 10px;
-    line-height: 14px;
+    border-radius: 3px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    border: none;
+    max-width: 450px;
+    height: 40px;
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 43px;
   }
   input::-webkit-input-placeholder { color: #B5B5B5; padding-left: 10px}
   input::-ms-input-placeholder { color: #B5B5B5; padding-left: 10px}
   input::-ms-input-placeholder { color: #B5B5B5; padding-left: 10px}
   input::placeholder { color: #B5B5B5; padding-left: 10px}
   button{
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     width: 250px;
     height: 40px;
     background: #FFFFFF;
-    border-radius: 30px;
-    font-size: 30px;
+    border-radius: 10px;
+    font-size: 25px;
     font-style: normal;
     font-weight: 400;
     line-height: 23px;
