@@ -1,11 +1,13 @@
 <template>
   <div class="container" >
     <div class="input">
-      <form action="" method="post" @submit.prevent="login" >
+
+      <form action="" method="post" @submit.prevent="userLogin" >
         <div class="enter">Вход в аккаунт</div>
         <br>
-    <input placeholder="введите логин" v-model="email"><br>
+        <input placeholder="введите логин" v-model="email"><br>
       <input placeholder="введите пароль" v-model="password" type="password"><br><br>
+        <h1>{{errors}}</h1>
         <button type="submit">Войти в аккаунт</button>
       </form>
     </div>
@@ -24,7 +26,18 @@ export default {
     }
   },
   methods: {
-    async login(){
+    async userLogin(){
+      try {
+        let response = await this.$auth.loginWith('local', {
+          email: this.email,
+          password: this.password
+        })
+        console.log(response)
+      }catch (err){
+        consle.log(err)
+      }
+    }
+/*    async login(){
       try {
         await this.$auth.loginWith('local', {
           data: {
@@ -33,22 +46,26 @@ export default {
           }
         }).then((res) => {
           if(res.data.errors) {
-            this.error = res.data.errors
+            this.errors = res.data.errors
           }else{
             localStorage.setItem('token', res.data.token)
-            /*this.$auth.setUserToken('local', 'Bearer ' + res.data.token)*/
+            /!*this.$auth.setUserToken('local', 'Bearer ' + res.data.token)*!/
             this.$router.push('/')
           }
         })
       }catch(error){
         alert('abc')
       }
-    }
+    }*/
   }
 }
 </script>
 
 <style scoped>
+h1{
+  font-size: 26px;
+  color: red;
+}
 .container{
   text-align: center;
 }

@@ -28,6 +28,7 @@ export default {
 }
 .logo2{
   padding-top: 23px;
+  padding-bottom: 23px;
 }
 .icon {
   padding: 8px;
@@ -47,6 +48,7 @@ export default {
   }
   .logo2{
     padding-top: 5px;
+    padding-bottom: 5px;
   }
 .logo1 img{
   width:31px;
