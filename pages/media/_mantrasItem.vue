@@ -4,8 +4,8 @@
   <item-banner v-bind:mantraName="[mantraData.name, postrerURL, 'Мантра']"/>
   <div class="description" v-html="mantraData.description"></div>
   <item-audio v-for="item in audios" v-bind:aud="item"/>
-  <div class="input-form" v-if="mantraData.questions == []">
-    <div><input placeholder="Введите ваше имя" v-model="userName"></div>
+  <div class="input-form" v-if="checkQuest">
+    <div><input placeholder="Введите ваше имя" v-model="userName" ></div>
     <div><input v-for="(quest, index) in mantraData.questions" :placeholder="quest.name" v-model="questData[index]" value=" "></div>
     <div><button @click="testForm">Отправить</button></div>
   </div>
@@ -17,7 +17,6 @@
 <script>
 import axios from "axios";
 export default {
-  middleware: 'auth',
   name: "mantrasItem",
   data() {
     return{
@@ -26,14 +25,17 @@ export default {
       mantraData: '',
       questData: [],
       check: false,
+      checkQuest: false,
       userName: '',
       answers: []
     }
   },
   mounted() {
-    this.auth = false
     axios.get(`https://api.hamiliya.space/get_materials/${this.$route.params.mantrasItem}`)
       .then((response) => this.mantraData = response.data.materials).then(()=> {
+        if (this.mantraData.questions.length > 0) {
+          this.checkQuest = true
+        }
       for(let i = 0; i < this.mantraData.file.length; i++){
         if(this.mantraData.file[i].audio !== 0){
           this.audios.push(this.mantraData.file[i])
@@ -54,6 +56,7 @@ export default {
     sumbitQustion(){
     for(let i = 0; i <this.mantraData.questions.length; i++){
         this.answers.push({id: this.mantraData.questions[i].id, text: this.questData[i]})
+      axios.post
     }
     console.log(this.answers)
     let object = {
@@ -101,6 +104,7 @@ input{
   font-style: normal;
   font-weight: 400;
   line-height: 43px;
+  padding-left: 20px;
 }
 button{
   margin-top: 30px;

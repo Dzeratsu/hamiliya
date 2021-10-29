@@ -8,7 +8,7 @@
     <div class="video ">
       <video-player :src="urlVideo[0]" v-if="urlVideo"/>
     </div>
-    <div class="input-form" v-if="mantraData.questions == []">
+    <div class="input-form" v-if="checkQuest">
       <div><input placeholder="Введите ваше имя" v-model="userName"></div>
       <div><input v-for="(quest, index) in mantraData.questions" :placeholder="quest.name" v-model="questData[index]" value=" "></div>
       <div><button @click="testForm">Отправить</button></div>
@@ -62,8 +62,11 @@ export default {
     }
   },
   mounted() {
-    axios.get(`https://api.hamiliya.space/get_materials/${this.$route.params.practiceItem}`)
+    axios.get(`https://api.hamiliya.space/get_materials/${this.$route.params.practiceItem}`, '', {headers: {Authorization: this.$auth.token.local}})
       .then((response) => this.mantraData = response.data.materials).then(()=> {
+      if (this.mantraData.questions.length > 0) {
+        this.checkQuest = true
+      }
       this.pageBlock = JSON.parse(this.mantraData.page_blocks)
       this.urlVideo = JSON.parse(this.mantraData.url_video)
       for(let i = 0; i < this.mantraData.file.length; i++){
@@ -118,6 +121,7 @@ input{
   font-style: normal;
   font-weight: 400;
   line-height: 43px;
+  padding-left: 20px;
 }
 button{
   margin-top: 30px;

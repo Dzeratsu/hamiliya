@@ -28,8 +28,7 @@ export default {
     '@/assets/css/style.css'
       ],
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-  ],
+  plugins: [],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -48,17 +47,9 @@ export default {
   build: {
   },
   auth: {
-    localStorage: false,
+    localStorage: true,
     strategies: {
       local: {
-        token: {
-          property: 'token',
-          global: true,
-          type: 'Bearer'
-        },
-        user:{
-          property: 'user'
-        },
         endpoints: {
           login: { url: 'https://api.hamiliya.space/authorization', method: 'post'},
           logout: true,

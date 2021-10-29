@@ -1,5 +1,6 @@
 <template>
 <div class="container">
+
   <auth/>
   <div><router-link to="/"><img src="/logo.png"></router-link></div>
   <div class="nav-menu">
@@ -13,9 +14,10 @@
 
 <script>
 import Auth from "./auth";
+import Burger from "../burger";
 export default {
   name: "HeaderLayout",
-  components: {Auth}
+  components: {Burger, Auth}
 }
 </script>
 

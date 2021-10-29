@@ -7,7 +7,6 @@
 
 <script>
 export default {
-  auth: false,
   name: "mantras"
 }
 </script>

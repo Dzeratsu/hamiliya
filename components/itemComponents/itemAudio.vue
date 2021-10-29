@@ -34,8 +34,6 @@ audio::-webkit-media-controls-panel{
 
 .audio{
   text-align: center;
-  padding-top: 120px;
-  padding-bottom: 120px;
 }
 @media screen and (max-width: 425px) {
   .audio{

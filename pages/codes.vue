@@ -15,6 +15,7 @@
 <script>
 export default {
   name: "codes",
+  layout: 'leftMenu',
   data () {
     return {
       iof: '',
@@ -137,6 +138,7 @@ input {
   line-height: 43px;
   color: white;
   margin-bottom: 90px;
+  padding-left: 20px;
 }
 input::-webkit-input-placeholder { color: #B7B1D6; }
 input::-ms-input-placeholder { color: #B7B1D6; }

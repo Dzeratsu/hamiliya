@@ -1,7 +1,6 @@
 <template>
-  <div class="container" >
+  <div class="container">
     <div class="input">
-
       <form action="" method="post" @submit.prevent="userLogin" >
         <div class="enter">Вход в аккаунт</div>
         <br>
@@ -28,13 +27,16 @@ export default {
   methods: {
     async userLogin(){
       try {
-        let response = await this.$auth.loginWith('local', {
+        let response = await this.$auth.loginWith('local', {data: {
           email: this.email,
           password: this.password
+          }
         })
-        console.log(response)
+        this.errors = response.data.errors
+        console.log(this.$auth.$storage)
+        console.log(this.$auth.loggedIn)
       }catch (err){
-        consle.log(err)
+        console.log(err)
       }
     }
 /*    async login(){
@@ -81,6 +83,7 @@ input{
   font-style: normal;
   font-weight: 400;
   line-height: 43px;
+  padding-left: 20px;
 }
 button{
   margin-top: 30px;

@@ -7,7 +7,8 @@
 
 <script>
 export default {
-  name: "services"
+  name: "services",
+  layout: 'leftMenu',
 }
 </script>
 

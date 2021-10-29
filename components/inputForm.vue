@@ -30,6 +30,7 @@ input{
   font-style: normal;
   font-weight: 400;
   line-height: 43px;
+  padding-left: 20px;
 }
 button{
   margin-top: 30px;

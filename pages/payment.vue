@@ -71,7 +71,7 @@ export default {
         "packet": `${this.key}`,
         "name": `${this.userName}`
       }
-      axios.post(`https://api.hamiliya.space/cloudpayments/payments/cards/charge`, object,{headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}})
+      axios.post(`https://api.hamiliya.space/cloudpayments/payments/cards/charge`, object,{headers: {Authorization: this.$auth.token.local}})
       .then((res) => {
         if(typeof(res.data.result) == 'object'){
           this.ford3dData.PaReq = res.data.result.PaReq
