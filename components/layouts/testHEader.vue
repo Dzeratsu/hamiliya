@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <auth/>
-    <div><router-link to="/"><img src="/logo.png"></router-link></div>
+    <div class="auth"><router-link to="/"><img src="/logo.png"></router-link></div>
     </div>
 </template>
 
@@ -14,6 +14,9 @@ export default {
 </script>
 
 <style scoped>
+.auth{
+  text-align: right;
+}
 .container div{
   text-align: center;
 }
