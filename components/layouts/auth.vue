@@ -31,6 +31,7 @@ export default {
 <style scoped>
 .auth{
   display: flex;
+  text-align: right;
   justify-content: right;
   padding-top: 10px;
 }
