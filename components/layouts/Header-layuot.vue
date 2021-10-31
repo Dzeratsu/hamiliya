@@ -1,7 +1,6 @@
 <template>
 <div class="container">
-
-  <auth/>
+  <auth class="dnone"/>
   <div><router-link to="/"><img src="/logo.png"></router-link></div>
   <div class="nav-menu">
     <div><NuxtLink to="/" active-class="border" exact-path><h2>Медиа</h2></NuxtLink></div>
@@ -48,6 +47,9 @@ h2{
 }
 
 @media screen and (max-width: 425px) {
+  .dnone{
+    display: none;
+  }
 img {
   height: 67px;
   width: 79px;
@@ -62,6 +64,7 @@ img {
   }
   .nav-menu {
     padding-top: 20px;
+    display: none;
   }
 }
 

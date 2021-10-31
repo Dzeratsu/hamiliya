@@ -15,7 +15,6 @@
 <script>
 export default {
   name: "codes",
-  layout: 'leftMenu',
   data () {
     return {
       iof: '',

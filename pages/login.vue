@@ -33,8 +33,10 @@ export default {
           }
         })
         this.errors = response.data.errors
-        console.log(this.$auth.$storage)
-        console.log(this.$auth.loggedIn)
+        if(response.data.status == true){
+          console.log(this.$auth)
+          this.$router.push('/')
+        }
       }catch (err){
         console.log(err)
       }

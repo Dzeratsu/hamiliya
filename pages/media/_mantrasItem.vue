@@ -31,7 +31,7 @@ export default {
     }
   },
   mounted() {
-    axios.get(`https://api.hamiliya.space/get_materials/${this.$route.params.mantrasItem}`)
+    this.$axios.get(`https://api.hamiliya.space/get_materials/${this.$route.params.mantrasItem}`)
       .then((response) => this.mantraData = response.data.materials).then(()=> {
         if (this.mantraData.questions.length > 0) {
           this.checkQuest = true
@@ -64,7 +64,7 @@ export default {
       'messages': `${this.userName}`,
       'answers': `[${this.answers}]`
     }
-    axios.post(`https://api.hamiliya.space/applications`, object).then((res)=>{
+      this.$axios.post(`https://api.hamiliya.space/applications`, object).then((res)=>{
       if(res.data.errors == "Token error"){
       alert('ошибка токена')}
       this.answers = []

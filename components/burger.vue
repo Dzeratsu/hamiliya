@@ -10,13 +10,16 @@
       <li><NuxtLink class="menu-item" to="/practiceAll">Практика</NuxtLink></li>
       <li><NuxtLink class="menu-item" to="/bookAll">Услуги</NuxtLink></li>
       <li><NuxtLink class="menu-item" to="/codes">Коды</NuxtLink></li>
+      <li>    <auth/></li>
     </ul>
   </div>
 </template>
 
 <script>
+import auth from "~/components/layouts/auth";
 export default {
-  name: "burger"
+  name: "burger",
+  components:{auth}
 }
 </script>
 
@@ -30,7 +33,7 @@ export default {
   width: 36px;
   height: 36px;
   cursor: pointer;
-  z-index: 1;
+  z-index: 150;
 }
 
 .menu-btn > span,

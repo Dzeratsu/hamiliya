@@ -6,7 +6,7 @@
     <div><NuxtLink to="/login"> Авторизация</NuxtLink></div>
   </div>
   <div class="auth" v-if="autorization">
-    <div><span v-on:click="log">Вы авторизованы</span></div>
+    <div><span v-on:click="log" class="exit">Выход</span></div>
     </div>
 </div>
 </template>
@@ -22,13 +22,17 @@ export default {
   methods: {
     log(){
       this.$auth.logout()
-      this.$router.push('/')
+      this.autorization = false
+      this.$router.push('/login')
     }
   }
 }
 </script>
 
 <style scoped>
+.exit {
+  cursor: pointer;
+}
 .auth{
   display: flex;
   text-align: right;
@@ -47,11 +51,21 @@ a{
   color: white;
 }
 @media screen and (max-width: 425px) {
+  .auth{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding-top: 25px;
+  }
   .auth div{
-    padding-right: 10px;
+    padding-right: 15px;
+  }
+  .auth span{
+    font-size: 25px;
+    color: white;
   }
   a{
-    font-size: 12px;
+    font-size: 20px;
     color: white;
   }
 }

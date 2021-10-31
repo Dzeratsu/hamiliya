@@ -17,7 +17,6 @@
 </template>
 
 <script>
-import axios from "axios";
 import VideoPlayer from 'nuxt-video-player';
 require("nuxt-video-player/src/assets/css/main.css");
 export default {
@@ -31,6 +30,7 @@ export default {
       mantraData: '',
       urlVideo: '',
       questData: [],
+      checkQuest: false,
       check: false,
       userName: '',
       answers: [],
@@ -50,19 +50,25 @@ export default {
         this.answers.push({id: this.mantraData.questions[i].id, text: this.questData[i]})
       }
       let object = {
-        'material_id': `${this.$route.params.mantrasItem}`,
-        'messages': `${this.userName}`,
-        'answers': `${this.answers}`
+        materials_id: Number(this.$route.params.practiceItem),
+        messages: this.userName,
+        answers: this.answers
       }
-      axios.post(`https://api.hamiliya.space/applications`, object,{headers: {Authorization: `Bearer token`}}).then((res)=>{
+      let abc = JSON.stringify(object)
+      console.log(abc)
+      this.$axios.post(`https://api.hamiliya.space/applications`, abc).then((res)=>{
         if(res.data.errors == "Token error"){
           alert('ошибка токена')}
+        else if (res.data.errors == "Повторная заявка"){
+          alert('Вы уже отвечали на вопросы')
+          this.answers = []
+        }
         this.answers = []
       })
     }
   },
   mounted() {
-    axios.get(`https://api.hamiliya.space/get_materials/${this.$route.params.practiceItem}`, '', {headers: {Authorization: this.$auth.token.local}})
+    this.$axios.get(`https://api.hamiliya.space/get_materials/${this.$route.params.practiceItem}`)
       .then((response) => this.mantraData = response.data.materials).then(()=> {
       if (this.mantraData.questions.length > 0) {
         this.checkQuest = true

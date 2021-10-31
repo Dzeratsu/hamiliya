@@ -81,7 +81,8 @@ export default {
     font-size: 10px;
   }
   .blur {
-    filter: blur(15px);
+    visibility: hidden !important;
+    filter: blur(0px);
   }
 }
 

@@ -1,5 +1,6 @@
 <template>
   <div class="wrapper">
+    <div class="container none"><burger/></div>
    <HeaderLayout/>
     <div class="content">
   <Nuxt/>
@@ -26,5 +27,15 @@ export default {
 <style scoped>
 .content {
   min-height: 606px;
+}
+.none {
+  display: none;
+}
+
+@media screen and (max-width: 425px) {
+  .none {
+    display: block;
+    padding-left: 5px;
+  }
 }
 </style>
