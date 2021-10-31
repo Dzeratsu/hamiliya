@@ -28,6 +28,7 @@ export default {
       mantraData: '',
       urlVideo: '',
       questData: [],
+      checkQuest: false,
       check: false,
       userName: '',
       answers: []
@@ -46,11 +47,12 @@ export default {
         this.answers.push({id: this.mantraData.questions[i].id, text: this.questData[i]})
       }
       let object = {
-        'material_id': `${this.$route.params.mantrasItem}`,
-        'messages': `${this.userName}`,
-        'answers': `${this.answers}`
+        materials_id: Number(this.$route.params.pageVideo),
+        messages: this.userName,
+        answers: this.answers
       }
-      axios.post(`https://api.hamiliya.space/applications`, object,{headers: {Authorization: `Bearer token`}}).then((res)=>{
+      let abc = JSON.stringify(object)
+      this.$axios.post(`https://api.hamiliya.space/applications`, abc).then((res)=>{
         if(res.data.errors == "Token error"){
           alert('ошибка токена')}
         this.answers = []

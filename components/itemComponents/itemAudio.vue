@@ -37,8 +37,7 @@ audio::-webkit-media-controls-panel{
 }
 @media screen and (max-width: 425px) {
   .audio{
-    padding-top: 30px;
-    padding-bottom: 30px;
+    z-index: 0;
   }
   img {
     width: 287px;

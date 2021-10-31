@@ -6,9 +6,7 @@
 </template>
 
 <script>
-import axios from "axios";
 import BookCatalogItem from "./bookCatalogItem";
-
 export default {
   components: {BookCatalogItem},
   props: ['id'],
@@ -19,7 +17,7 @@ export default {
     }
   },
       mounted() {
-      axios.get(`https://api.hamiliya.space/category/${this.id[0]}/page/0`)
+      this.$axios.get(`https://api.hamiliya.space/category/${this.id[0]}/page/0`)
         .then((res) => {
           this.materialData = res.data.categories_materials.result
         })

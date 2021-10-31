@@ -58,13 +58,13 @@ export default {
         this.answers.push({id: this.mantraData.questions[i].id, text: this.questData[i]})
       axios.post
     }
-    console.log(this.answers)
-    let object = {
-      'material_id': this.mantraData.id,
-      'messages': `${this.userName}`,
-      'answers': `[${this.answers}]`
-    }
-      this.$axios.post(`https://api.hamiliya.space/applications`, object).then((res)=>{
+      let object = {
+        materials_id: Number(this.$route.params.mantrasItem),
+        messages: this.userName,
+        answers: this.answers
+      }
+      let abc = JSON.stringify(object)
+      this.$axios.post(`https://api.hamiliya.space/applications`, abc).then((res)=>{
       if(res.data.errors == "Token error"){
       alert('ошибка токена')}
       this.answers = []
@@ -127,7 +127,7 @@ input::placeholder { color: #B5B5B5; padding-left: 42px}
 
 @media screen and (max-width: 425px) {
   .description{
-    height: 50px;
+    min-height: 50px;
     width: 241px;
     margin: 0 auto;
     padding-top: 30px;

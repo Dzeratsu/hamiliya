@@ -55,7 +55,6 @@ export default {
         answers: this.answers
       }
       let abc = JSON.stringify(object)
-      console.log(abc)
       this.$axios.post(`https://api.hamiliya.space/applications`, abc).then((res)=>{
         if(res.data.errors == "Token error"){
           alert('ошибка токена')}
@@ -149,7 +148,7 @@ input::-ms-input-placeholder { color: #B5B5B5; padding-left: 42px}
 input::placeholder { color: #B5B5B5; padding-left: 42px}
 @media screen and (max-width: 425px) {
   .description{
-    height: 50px;
+    min-height: 5px;
     width: 241px;
     margin: 0 auto;
     padding-top: 30px;

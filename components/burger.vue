@@ -68,6 +68,7 @@ export default {
   background-color: #847BB2;
   box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
   transition-duration: .25s;
+  z-index: 1;
 }
 .menu-item {
   display: block;

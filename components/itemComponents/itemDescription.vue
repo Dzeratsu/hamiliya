@@ -37,16 +37,18 @@ export default {
   }
   .bg-descr {
     margin: 0 auto;
-    height:68px;
+    min-height: 5px;
     width:197px;
     background: rgba(132, 123, 178, 0.56);
     color: white;
   }
   .text {
+    padding: 0px;
+    padding-bottom: 14px;
     padding-top: 14px;
     margin: 0 auto;
     width: 154px;
-    height: 68px;
+    min-height: 5px;
     font-size: 6px;
     line-height: 8px;
   }

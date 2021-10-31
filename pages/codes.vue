@@ -162,13 +162,13 @@ input::placeholder { color: #B7B1D6;}
 }
 @media screen and (max-width: 425px) {
   .code-item {
-    max-width: 187px;
-    max-height: 31px;
+    max-width: 237px;
+    max-height: 81px;
   }
   .code-item p{
     padding-top: 0px;
     text-align: center;
-    font-size: 15px;
+    font-size: 22px;
     font-style: normal;
     font-weight: 700;
     line-height: 31px;
@@ -181,7 +181,7 @@ input::placeholder { color: #B7B1D6;}
   .code-form{
     margin-top: 30px;
     height: 202px;
-    width: 233px;
+    width: 305px;
   }
   .input-form{
     padding-top: 27px;
@@ -191,7 +191,7 @@ input::placeholder { color: #B7B1D6;}
     border-bottom:1px solid white;
     background: #847BB2;
     outline: none!important;
-    max-width: 172px;
+    max-width: 252px;
     height: 30px;
     font-size: 10px;
     font-style: normal;
@@ -202,8 +202,8 @@ input::placeholder { color: #B7B1D6;}
   button {
     margin-top: 15px;
     border: none;
-    width: 130px;
-    height: 30px;
+    width: 180px;
+    height: 40px;
     background: #FFFFFF;
     border-radius: 500px;
     font-size: 10px;
