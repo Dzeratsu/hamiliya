@@ -34,7 +34,7 @@ export default {
 
 @media screen and (max-width: 425px) {
   .none {
-    display: block;
+    display: none;
     padding-left: 5px;
   }
 }

@@ -5,11 +5,11 @@
       <div><NuxtLink to="/"><img :src="require('/assets/logoPop.png')"></NuxtLink></div>
       <div class="description">Вы вошли в платный раздел. Чтобы получить полный доступ ко всем платным продуктам (кроме расчета вибраций) выберете подписку.</div>
       <div class="price">
-        <div><p>1 месяц за 529 ₽</p></div>
-        <div><p>3 месяца за 1350 ₽</p></div>
-        <div><p>1 год за 3990 ₽</p></div>
+        <NuxtLink to="/payment"><div><p>1 месяц за 529 ₽</p></div></NuxtLink>
+        <NuxtLink to="/payment"><div><p>3 месяца за 1350 ₽</p></div></NuxtLink>
+        <NuxtLink to="/payment"><div><p>1 год за 3990 ₽</p></div></NuxtLink>
       </div>
-      <div> <button>Получить код</button></div>
+      <div> <button><NuxtLink to="/codes">Получить код</NuxtLink></button></div>
     </div>
   </div>
   </div>
@@ -17,7 +17,6 @@
 
 <script>
 export default {
-
   name: "byu"
 }
 </script>

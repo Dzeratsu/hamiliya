@@ -50,22 +50,23 @@ a{
   color: white;
 }
 @media screen and (max-width: 425px) {
-  .auth{
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    padding-top: 25px;
-  }
-  .auth div{
-    padding-right: 15px;
-  }
-  .auth span{
-    font-size: 25px;
-    color: white;
-  }
-  a{
-    font-size: 20px;
-    color: white;
-  }
+  /*  .auth{*/
+  /*    display: flex;*/
+  /*    text-align: center;*/
+  /*    justify-content: center;*/
+  /*    padding-top: 25px;*/
+  /*  }*/
+  /*  .auth div{*/
+  /*    padding-right: 15px;*/
+  /*  }*/
+  /*  .auth span{*/
+  /*    font-size: 25px;*/
+  /*    color: white;*/
+  /*  }*/
+  /*  a{*/
+  /*    font-size: 20px;*/
+  /*    color: white;*/
+  /*  }*/
+  /*}*/
 }
 </style>

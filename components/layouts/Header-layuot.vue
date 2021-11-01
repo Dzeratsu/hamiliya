@@ -48,7 +48,7 @@ h2{
 
 @media screen and (max-width: 425px) {
   .dnone{
-    display: none;
+
   }
 img {
   height: 67px;
@@ -64,7 +64,7 @@ img {
   }
   .nav-menu {
     padding-top: 20px;
-    display: none;
+
   }
 }
 
