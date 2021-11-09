@@ -2,7 +2,7 @@
 <div class="container">
   <div class="code-form">
     <div class="input-form">
-      <div><input placeholder="Имя Отчество Фамилия" type="text" v-model="iof" @keypress="test()"></div>
+      <div><input placeholder="Введите данные (буквы, цифры) для кодирования" type="text" v-model="iof"@keypress="test"></div>
       <div><button @click="code()">Получить код</button></div>
     </div>
     <div class="code-user">
@@ -17,26 +17,31 @@ export default {
   name: "codes",
   data () {
     return {
+      iofHide: '',
       iof: '',
       result: ''
     }
   },
   methods:{
     test(){
-      this.iof = this.iof.replace(/[^А-я ]/g, '')
+      this.iof = this.iof.replace(/[^А-я 0-9,.]/g, '')
+    },
+    testHide(){
+      this.iofHide = this.iof.replace(/[^А-я 0-9]/g, '')
     },
     code(){
-      this.test()
+      this.testHide()
      let alfavit = {
         а: 1, б: 2, в: 3, г: 4, д: 5, е: 6, ё: 7, ж: 8, з: 9,
           и: 1, й: 2, к: 3, л: 4, м: 5, н: 6, о: 7, п: 8, р: 9,
           с: 1, т: 2, у: 3, ф: 4, х: 5, ц: 6, ч: 7, ш: 8, щ: 9,
-          ъ: 1, ы: 2, ь: 3, э: 4, ю: 5, я: 6
+          ъ: 1, ы: 2, ь: 3, э: 4, ю: 5, я: 6, 0: 0, 1: 1, 2: 2,
+          3: 3, 4: 4, 5: 5, 6: 6, 7: 7 , 8: 8, 9: 9
       }
       let number = []
       var Summ = []
       var firstSumm = []
-      let arr = this.iof.toLowerCase().split(' ').join('').split('')
+      let arr = this.iofHide.toLowerCase().split(' ').join('').split('')
       for(let i = 0; i < arr.length; i++){
         number.push(alfavit[arr[i]])
       }
