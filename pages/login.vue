@@ -28,8 +28,8 @@ export default {
     async userLogin(){
       try {
         let response = await this.$auth.loginWith('local', {data: {
-          email: this.email,
-          password: this.password
+          email: this.email.replace(/[ ]/g, ''),
+          password: this.password.replace(/[ ]/g, '')
           }
         })
         this.errors = response.data.errors

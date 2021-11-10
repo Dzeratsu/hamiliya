@@ -1,14 +1,18 @@
 <template>
-<div class="container">Начнется загрузка книги PDF откроется в браузере</div>
+<div class="container"></div>
 </template>
 
 <script>
 export default {
-  middleware: 'auth',
   name: "_bookitem",
   data () {
     return {
     apiURL: 'https://api.hamiliya.space/'
+    }
+  },
+  methods: {
+    openBook(){
+      window.open(this.apiURL)
     }
   },
   mounted() {
@@ -16,11 +20,16 @@ export default {
     .then((res) => {
       let doc = res.data.materials.file
       for(let i = 0; i < doc.length; i++){
-        if(doc[i].documents == 1) {
-          this.apiURL + doc[i].url
+        if(doc[i].documents === 1) {
+          this.apiURL += doc[i].url
         }
       }
-      this.$router.redirect(`${this.apiURL}`)
+      if(this.apiURL !== 'https://api.hamiliya.space/'){
+        this.$router.push('/bookAll')
+        this.openBook()
+      }
+
+      /*this.$router.redirect(`${this.apiURL}`)*/
     })
   }
 }
