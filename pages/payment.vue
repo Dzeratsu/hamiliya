@@ -5,7 +5,7 @@
   <div class="pay"><div class="pay-padding">
     <img src="assets/card.jpg">
   <form id="paymentFormSample" onsubmit="return false;">
-    <div><span>Номер карты:</span><br> <input type="text" data-cp="cardNumber"  maxlength="16" placeholder="Номер карты" class="card" onkeyup="this.value = this.value.replace (/\D/gi, '').replace (/^0+/, '')"></div>
+    <div><span>Номер карты:</span><br> <input type="text" data-cp="cardNumber" placeholder="Номер карты" class="card" onkeyup="this.value = this.value.replace (/\D/gi, '').replace (/^0+/, '')"></div>
     <br>
     <div><span>ММ</span>
     <input type="text" data-cp="expDateMonth"  maxlength="2" class="date" onkeyup="this.value = this.value.replace (/\D/gi, '').replace (/^0+/, '')" ><span>  / ГГ</span>
