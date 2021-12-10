@@ -25,9 +25,8 @@
 </template>
 
 <script>
-import axios from "axios";
-
 export default {
+  middleware: ['auth'],
   name: "payment",
   data() {
     return {
@@ -71,7 +70,7 @@ export default {
         "packet": `${this.key}`,
         "name": `${this.userName}`
       }
-      axios.post(`https://api.hamiliya.space/cloudpayments/payments/cards/charge`, object,{headers: {Authorization: this.$auth.token.local}})
+      this.$axios.post(`https://api.hamiliya.space/cloudpayments/payments/cards/charge`, object)
       .then((res) => {
         if(typeof(res.data.result) == 'object'){
           this.ford3dData.PaReq = res.data.result.PaReq
