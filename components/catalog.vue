@@ -21,7 +21,20 @@ export default {
   mounted() {
       axios.get(`https://api.hamiliya.space/category/${this.id[0]}/page/0`)
         .then((res) =>{
-          this.materialData = res.data.categories_materials.result
+          let total = res.data.categories_materials.result.total_number_materials
+          if(total > 10) {
+            this.materialData = res.data.categories_materials.result
+            let num = Math.floor(total / 10)
+            for(let i = 1; i <= num; i++){
+              axios.get(`https://api.hamiliya.space/category/${this.id[0]}/page/${i}`)
+              .then((res) =>{
+                this.materialData.materials = this.materialData.materials.concat(res.data.categories_materials.result.materials)
+                console.log(res.data.categories_materials.result)
+              })
+            }
+          }else {
+            this.materialData = res.data.categories_materials.result
+          }
         })
     }
 }

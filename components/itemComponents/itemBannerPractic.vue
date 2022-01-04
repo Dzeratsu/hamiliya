@@ -2,8 +2,8 @@
   <div class="banner">
     <div class="banner-fon">
       <div class="banner-text">
-        <div class="description">Вы можете ознакомится с нашими <br> фирменными курсами</div>
-        <div class="description"><div style="padding-top: 15px"><button>Подробнее</button></div></div>
+        <div class="description">В этом разделе представлены короткие практики, которые подходят для ежедневного использования.<br> Если вы хотите пройти обучающие курсы, то приглашаем вас в Академию Хамилия</div>
+        <div class="description"><div style="padding-top: 15px"><button><a href="https://irinachikunova-academy.ru/" target="blank">Подробнее</a></button></div></div>
       </div>
     </div>
   </div>
