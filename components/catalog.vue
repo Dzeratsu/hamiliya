@@ -29,7 +29,6 @@ export default {
               axios.get(`https://api.hamiliya.space/category/${this.id[0]}/page/${i}`)
               .then((res) =>{
                 this.materialData.materials = this.materialData.materials.concat(res.data.categories_materials.result.materials)
-                console.log(res.data.categories_materials.result)
               })
             }
           }else {
