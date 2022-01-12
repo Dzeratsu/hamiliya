@@ -6,8 +6,8 @@
     <NuxtLink  to="/bookAll">Книги</NuxtLink>
   </div>
     <span></span>
-  <div><a href="https://irinachikunovaacademy.ru/teach/control/stream/view/id/519454037"class="none">Расчет вибраций</a>
-    <a href="https://irinachikunovaacademy.ru/teach/control/stream/view/id/519454037" target="blank">Расчет вибраций</a>
+  <div><router-link active-class="blur" to="/vibrations" class="none">Расчет вибраций</router-link>
+    <router-link  to="/vibrations">Расчет вибраций</router-link>
   </div>
 </div>
   </div>

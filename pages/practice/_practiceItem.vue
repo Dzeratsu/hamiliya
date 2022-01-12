@@ -3,8 +3,8 @@
     <item-banner v-bind:mantraName="[mantraData.name, postrerURL, 'Практика']"/>
     <div class="description" v-html="pageBlock[0].description" v-if="pageBlock"></div>
     <!--  <img src="~/assets/practic.png">-->
-    <item-description v-bind:text="pageBlock[1].description" v-if="pageBlock"/>
-    <div class="description"v-html="pageBlock[2].description" v-if="pageBlock"> </div>
+    <item-description v-bind:text="pageBlock[1].description" v-if="block1"/>
+    <div class="description"v-html="pageBlock[2].description" v-if="block2"> </div>
     <div class="video ">
       <video-player :src="urlVideo[0]" v-if="urlVideo"/>
     </div>
@@ -25,6 +25,8 @@ export default {
   components: {VideoPlayer},
   data() {
     return{
+      block1: false,
+      block2: false,
       audios: [],
       postrerURL: '',
       mantraData: '',
@@ -73,6 +75,13 @@ export default {
         this.checkQuest = true
       }
       this.pageBlock = JSON.parse(this.mantraData.page_blocks)
+      console.log(this.pageBlock[1].description)
+    if(this.pageBlock[1].description !== '<p>пусто</p>'){
+        this.block1 = true
+      }
+      if(this.pageBlock[2].description !== '<p>пусто</p>'){
+        this.block2 = true
+      }
       this.urlVideo = JSON.parse(this.mantraData.url_video)
       for(let i = 0; i < this.mantraData.file.length; i++){
         if(this.mantraData.file[i].audio !== 0){
