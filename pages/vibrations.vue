@@ -16,15 +16,14 @@
   <div class="description"><div style="padding-top: 15px"><button><a href="https://irinachikunovaacademy.ru/pl/teach/control/lesson/view?id=208559535&editMode=0" target="blank">Оплатить рассчет</a></button></div></div>
   <h1 style="padding-top: 25px">Что такое вибрации?</h1>
   <div style="margin-top: 25px">
-  <iframe width="1100" height="715" src="https://www.youtube.com/embed/Gw9Ws_WD7cA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe class="video" src="https://www.youtube.com/embed/Gw9Ws_WD7cA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
   <div>
    <p>В день обрабатывается не более 10 заявок!</p>
   <p>ВНИМАНИЕ:На текущий момент время ожидания результата составляет до 3-4 недель!</p>
   </div>
   </div>
-  <div class="value-min-mob"><div class="text">Расчет вибраций</div><div class="text2"><b>1 399 руб.</b></div></div>
-  <div class="img-price">
+    <div class="img-price">
     <div class="img-fon"></div>
   </div>
 
@@ -38,6 +37,10 @@ export default {
 </script>
 
 <style scoped>
+.video {
+  width: 1100px;
+  height: 715px;
+}
 p{
   padding-top: 10px;
   font-size: 25px;
@@ -129,6 +132,10 @@ button{
 display: none;
 }
 @media screen and (max-width: 425px) {
+  .video {
+    width: 260px;
+    height: 180px;
+  }
   .text {
     font-size: 10px;
     padding: 2px 8px;
